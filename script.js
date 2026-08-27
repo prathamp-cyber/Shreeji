@@ -43,11 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
-      if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-      } else {
-        navLinks.style.display = 'flex';
+      navLinks.classList.toggle('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (icon) {
+        if (navLinks.classList.contains('active')) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fa-solid fa-bars';
+        }
       }
+    });
+
+    document.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      });
     });
   }
 
