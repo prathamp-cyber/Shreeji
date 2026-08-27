@@ -655,7 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     listingsToRender.forEach(listing => {
       const card = document.createElement('div');
-      card.className = 'service-card reveal active';
+      card.className = 'service-card active';
       card.style.borderTop = '6px solid var(--accent-gold)';
       card.innerHTML = `
         <div class="tag" style="background: var(--primary); color: white; margin-bottom: 1rem;">${listing.tag}</div>
