@@ -497,8 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const langBtns = document.querySelectorAll('.lang-btn');
-
   function applyLanguage(lang) {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(el => {
