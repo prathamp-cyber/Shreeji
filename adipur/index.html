@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adipur Commercial Rental & Property Lease | Shops, Offices & Showrooms</title>
+  <meta name="description" content="Commercial rental properties in Adipur. Retail market shops for rent, showrooms near Adipur Railway Station, commercial office suites, and long-term lease space.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+          <div class="logo-text">Shreeji<span>RealEstate</span></div>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/overview" class="nav-link">Overview</a></li>
+          <li class="dropdown">
+            <div class="dropdown-toggle nav-link active">
+              Target Areas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div class="dropdown-menu">
+              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Gandhidham</a>
+              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Adipur</a>
+            </div>
+          </li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/process" class="nav-link">Process</a></li>
+          <li><a href="/faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="guj">ગુજ</button>
+          </div>
+          <button class="btn btn-primary" onclick="openModal('buy')" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+            Contact Us
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="min-height: 65vh;">
+    <img src="/images/hero.png" alt="Adipur Commercial Property" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <div class="container">
+      <div class="hero-content reveal" style="padding: 3rem 0;">
+        <div class="hero-badge">
+          <i class="fa-solid fa-store"></i> Adipur Commercial & Retail Belt
+        </div>
+        <h1 class="hero-title">
+          Commercial Properties for Rent in <span>Adipur</span>
+        </h1>
+        <p class="hero-subtitle">
+          Discover high-demand retail market shops, commercial office suites, and rental showrooms near Adipur Station Road and primary commercial markets.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" onclick="openModal('buy')">
+            <i class="fa-solid fa-magnifying-glass-location"></i> Find Rental Space in Adipur
+          </button>
+          <button class="btn btn-secondary" onclick="openModal('sell')">
+            <i class="fa-solid fa-key"></i> Rent Out Property in Adipur
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Adipur Map PDF Section (Ready for user PDF) -->
+  <section class="section" id="adipurMapSection" style="background: var(--bg-slate);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold"><i class="fa-solid fa-file-pdf"></i> Town Planning Document</span>
+        <h2 class="section-title">Adipur Commercial Market Map (PDF)</h2>
+        <p class="section-subtitle">Official commercial market layout, station road sector map, and retail plot grid for Adipur.</p>
+      </div>
+
+      <div style="background: var(--bg-white); border-radius: 24px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);" class="reveal">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2.5rem; color: #EF4444;"><i class="fa-solid fa-file-pdf"></i></div>
+            <div>
+              <h3 style="font-size: 1.25rem; color: var(--primary-dark);" id="adipurPdfTitle">MASTER-PLAN.pdf</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem;">Official Adipur Commercial & Station Road Master Plan</p>
+            </div>
+          </div>
+          <a href="/MASTER-PLAN.pdf" id="adipurPdfDownloadBtn" class="btn btn-primary" download="Adipur-Commercial-Master-Plan.pdf" style="gap: 0.5rem;"><i class="fa-solid fa-download"></i> Download Master Plan PDF</a>
+        </div>
+
+        <!-- Embedded Interactive PDF Viewer -->
+        <div id="adipurPdfViewer" style="width: 100%; height: 650px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: #525659;">
+          <iframe src="/MASTER-PLAN.pdf" width="100%" height="100%" style="border: none;">
+            <p style="padding: 2rem; text-align: center; color: white;">Your browser does not support inline PDF viewing. <a href="/MASTER-PLAN.pdf" style="color: var(--accent-gold);">Click here to download MASTER-PLAN.pdf</a></p>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Commercial Rental Listings in Adipur -->
+  <section class="section" style="background: var(--bg-white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag emerald">Verified Rental Properties</span>
+        <h2 class="section-title">Commercial Rental Spaces in Adipur</h2>
+        <p class="section-subtitle">High-visibility retail shops, showrooms, and office spaces available for rent.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card buyer-card reveal">
+          <div class="tag" style="background: var(--primary); color: white; margin-bottom: 1rem;">Retail Showroom</div>
+          <h3>1,500 Sq.Ft Main Market Showroom</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem 0;"><i class="fa-solid fa-location-dot"></i> Station Road Market, Adipur</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Prime corner shop location with high visibility</li>
+            <li><i class="fa-solid fa-check"></i> Mezzanine floor for extra storage or office space</li>
+            <li><i class="fa-solid fa-check"></i> Ready for retail, clothing brands & electronics</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Inquire Rental Rate</button>
+        </div>
+
+        <div class="service-card seller-card reveal">
+          <div class="tag" style="background: var(--accent-gold-dark); color: white; margin-bottom: 1rem;">Commercial Office</div>
+          <h3>600 Sq.Ft Modern Office Unit</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem 0;"><i class="fa-solid fa-location-dot"></i> Near Adipur Bus Station Complex</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Ready to move in with attached bathroom</li>
+            <li><i class="fa-solid fa-check"></i> Low maintenance & dedicated parking space</li>
+            <li><i class="fa-solid fa-check"></i> Ideal for doctors, lawyers & consultants</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Schedule Property Visit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Dialog -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        <h2 id="modalTitle" style="color: white; font-size: 1.5rem;">Commercial Rental Inquiry - Adipur</h2>
+        <p id="modalSub" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 0.25rem;">Our Adipur commercial property specialist will share rental terms & details.</p>
+        
+        <div class="modal-tabs">
+          <button class="modal-tab active" id="buyTab"><i class="fa-solid fa-cart-shopping"></i> I Want to Rent Commercial Space</button>
+          <button class="modal-tab" id="sellTab"><i class="fa-solid fa-tag"></i> I Want to Rent Out My Property</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <form id="buyerForm" class="form-grid">
+          <div class="form-group">
+            <label class="form-label">City / Location</label>
+            <input type="text" class="form-input" value="Adipur Commercial Belt" readonly>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Space Type Required</label>
+            <select class="form-select" required>
+              <option value="">Select Property Type</option>
+              <option value="shop">Retail Shop / Showroom</option>
+              <option value="office">Commercial Office</option>
+              <option value="plot">Commercial Lease Plot</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Rental Inquiry</button>
+          </div>
+        </form>
+
+        <form id="sellerForm" class="form-grid" style="display: none;">
+          <div class="form-group">
+            <label class="form-label">Adipur Property Address</label>
+            <input type="text" class="form-input" placeholder="e.g. Station Road, Adipur" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Built-up Area (Sq.Ft)</label>
+            <input type="text" class="form-input" placeholder="e.g. 800 Sq.Ft" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Owner / Representative Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-secondary" style="width: 100%;">List Property for Rent</button>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>Inquiry Received!</h3>
+          <p>Our Adipur commercial manager will get back to you shortly.</p>
+          <button class="btn btn-outline" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

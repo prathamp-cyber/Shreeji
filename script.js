@@ -41,82 +41,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  if (mobileMenuBtn) {
+  if (mobileMenuBtn && navLinks) {
     mobileMenuBtn.addEventListener('click', () => {
       if (navLinks.style.display === 'flex') {
         navLinks.style.display = 'none';
       } else {
         navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '80px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = '#FFFFFF';
-        navLinks.style.padding = '2rem';
-        navLinks.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
       }
     });
   }
 
-  // 2. Clean Routing & Section Scroll (HTML5 History API)
-  const routeMap = {
-    '/overview': 'overview',
-    '/industries': 'industries',
-    '/services': 'services',
-    '/process': 'process',
-    '/faq': 'faq',
-    '/home': 'home'
-  };
-
-  function navigateToSection(path, isInitial = false) {
-    const sectionId = routeMap[path];
-    const targetSection = sectionId ? document.getElementById(sectionId) : null;
-
-    if (targetSection) {
-      const headerOffset = 80;
-      const elementPosition = targetSection.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: isInitial ? 'auto' : 'smooth'
-      });
-      
-      if (!isInitial) {
-        history.pushState(null, '', path);
-      }
-      updateActiveNavLink(path);
-    } else if (path === '/' || path === '/home') {
-      window.scrollTo({ top: 0, behavior: isInitial ? 'auto' : 'smooth' });
-      if (!isInitial) history.pushState(null, '', '/');
-      updateActiveNavLink('/');
+  // 2. Active Nav Link Highlighting based on current pathname
+  const currentPath = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+  document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+    const href = link.getAttribute('href')?.toLowerCase().replace(/\/$/, '') || '/';
+    if (href === currentPath || (currentPath === '' && href === '/') || (href !== '/' && currentPath.includes(href))) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
-  }
-
-  function updateActiveNavLink(path) {
-    document.querySelectorAll('.nav-link').forEach(link => {
-      const href = link.getAttribute('href');
-      if (href === path || (path === '/' && href === '/')) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }
-
-  // Intercept nav links for smooth single-page clean routing
-  document.querySelectorAll('a[href^="/"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href in routeMap || href === '/') {
-        e.preventDefault();
-        navigateToSection(href);
-        if (window.innerWidth <= 768 && navLinks) {
-          navLinks.style.display = 'none';
-        }
-      }
-    });
   });
 
   // 3. Dropdown Toggle Handler
@@ -331,19 +274,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const dictionary = {
     en: {
-      hero_title: 'Your Trusted Land Consultant for <span>Commercial & Industrial Land</span> in Kutch',
-      hero_sub: 'Expert guidance for strategic land acquisition and sales near Kandla, Mundra, Tuna Ports & Dholavira SEZ.',
-      buy_btn: 'Looking to Buy Land?',
-      sell_btn: 'Looking to Sell Land?',
-      industries_title: 'Industries We Specialize In',
-      process_title: 'Our Proven 5-Step Process'
+      hero_title: 'Your Premier Partner for <span>Rental Commercial Properties</span> in Gandhidham & Adipur',
+      hero_sub: 'Expert guidance for renting, leasing, buying, and listing commercial shops, corporate offices, showrooms, and commercial plots.',
+      buy_btn: 'Looking for Rental Commercial Space?',
+      sell_btn: 'Rent Out / List Your Property',
+      industries_title: 'Gandhidham & Adipur Commercial Categories',
+      process_title: 'Our Proven 5-Step Leasing & Buying Process'
     },
     guj: {
-      hero_title: 'કચ્છમાં <span>વાણિજ્યિક અને ઔદ્યોગિક જમીન</span> માટે તમારા વિશ્વસનીય કન્સલ્ટન્ટ',
-      hero_sub: 'કાંડલા, મુન્દ્રા, ટૂના પોર્ટ અને ધોળાવીરા નજીક જમીન ખરીદ-વેચાણ માટે નિષ્ણાત માર્ગદર્શન.',
-      buy_btn: 'જમીન ખરીદવી છે?',
-      sell_btn: 'જમીન વેચવી છે?',
-      industries_title: 'મુખ્ય ઔદ્યોગિક ક્ષેત્રો',
+      hero_title: 'ગાંધીધામ અને આદિપુરમા <span>કોમર્શિયલ પ્રોપર્ટી ભાડે આપવા અને લેવા</span> માટે વિશ્વાસપાત્ર કન્સલ્ટન્ટ',
+      hero_sub: 'દુકાનો, કોર્પોરેટ ઓફિસ, શોરૂમ અને કોમર્શિયલ પ્લોટ ભાડે લેવા-આપવા માટે શ્રેષ્ઠ માર્ગદર્શન.',
+      buy_btn: 'કોમર્શિયલ જગ્યા ભાડે જોઈએ છે?',
+      sell_btn: 'પ્રોપર્ટી ભાડે આપવી છે?',
+      industries_title: 'મુખ્ય કોમર્શિયલ વિસ્તારો',
       process_title: 'અમારી ૫-પગલાની પ્રક્રિયા'
     }
   };
@@ -366,86 +309,47 @@ document.addEventListener('DOMContentLoaded', () => {
   // 10. Admin Content Dynamic Loading & Rendering
   const defaultSiteContent = {
     home: {
-      heroTitle: "Your Trusted Land Consultant for <span>Commercial & Industrial Land</span> in Kutch",
-      heroSubtitle: "Expert guidance for strategic land transactions near Kandla, Mundra, Tuna Ports & Dholavira UNESCO Site. Specializing in Gandhidham, Anjar, Bhuj & GIDC estates.",
+      heroTitle: "Your Premier Partner for <span>Rental Commercial Properties</span> in Gandhidham & Adipur",
+      heroSubtitle: "Expert guidance for renting, leasing, buying, and listing commercial shops, corporate offices, showrooms, and commercial plots across Gandhidham & Adipur, Gujarat.",
       contactPhone: "+91 70162 70941",
-      contactEmail: "landinkutch@gmail.com",
-      storyHeadline: "Who We Are",
-      storyParagraph: "LandInKutch is your trusted land consultant for strategic land transactions in Kutch's port corridor. With 10+ years of experience and deep market knowledge, we facilitate successful land deals between serious buyers and sellers through our proven consultancy process.",
+      contactEmail: "shreejirealestate@gmail.com",
+      storyHeadline: "Shreeji Real Estate Consultancy",
+      storyParagraph: "Shreeji Real Estate is your dedicated commercial property & rental consultancy headquartered in Gandhidham, Kutch, Gujarat. With 10+ years of local market leadership, we connect business owners, retail brands, and corporate tenants with top commercial rental spaces, offices, and plots in Gandhidham and Adipur.",
       statYears: "10+ Years",
-      statAcres: "500+ Acres",
+      statAcres: "250+ Spaces",
       statClients: "100+ Clients"
     },
-    kandla: {
-      heroBadge: "Maritime & Logistics Hub",
-      heroTitle: "Commercial Land in <span>Kandla Port Corridor</span>",
-      heroSubtitle: "Prime warehousing, container freight station (CFS), and cold storage plots situated adjacent to Deendayal Port Trust (DPT) & Kandla-Gandhidham highway.",
-      adv1Title: "Major Port Gate Proximity",
-      adv1Desc: "Plots located within 5 km to 15 km of Kandla Port docks, drastically reducing drayage and container transport costs.",
-      adv2Title: "Highway Connectivity",
-      adv2Desc: "Direct 4-lane access to NH-41 connecting Gandhidham, Ahmedabad, and major inland container depots (ICDs).",
-      adv3Title: "High Industrial Power",
-      adv3Desc: "Continuous 66kV and 11kV substation feeder lines specifically configured for heavy warehousing and cold chains.",
-      adv4Title: "Clear NA Status",
-      adv4Desc: "Verified non-agricultural commercial zoning suitable for logistics parks, liquid tank farms, and godowns."
+    gandhidham: {
+      heroBadge: "Gandhidham Commercial Hub",
+      heroTitle: "Rental Commercial Properties in <span>Gandhidham</span>",
+      heroSubtitle: "Explore top rental shops, corporate office spaces, retail showrooms, and commercial lease plots along Tagor Road, Main Market, and Sector 1-12 in Gandhidham.",
+      adv1Title: "Tagore Road Commercial Sector",
+      adv1Desc: "High-demand corporate office buildings and furnished commercial suites with 24/7 power backup and elevator access.",
+      adv2Title: "Main Market Retail Outlets",
+      adv2Desc: "Prime ground-floor shop spaces with heavy daily customer footfall ideal for retail brands, banks, and cafes.",
+      adv3Title: "Commercial Plot Leasing",
+      adv3Desc: "Open roadside commercial plots available on long-term lease agreements for custom commercial construction.",
+      adv4Title: "Hassle-Free Lease Deeds",
+      adv4Desc: "Complete legal verification, background check of tenants/landlords, and registered 11-month lease deed preparation."
     },
-    mundra: {
-      heroBadge: "Global Trade Gateway",
-      heroTitle: "Industrial Land in <span>Mundra SEZ & Port</span>",
-      heroSubtitle: "Prime industrial land, heavy manufacturing zones, and logistics terminal plots inside or adjacent to India's largest private port and Special Economic Zone.",
-      adv1Title: "SEZ Tax Incentives",
-      adv1Desc: "Duty-free import, single-window clearances, and long-term corporate tax exemptions inside the Mundra SEZ territory.",
-      adv2Title: "Deep Water Port Access",
-      adv2Desc: "Seamless integration with Mundra Port's container terminals, bulk cargo berths, and dedicated railway lines.",
-      adv3Title: "Co-Location Benefits",
-      adv3Desc: "Proximity to power plants, steel mills, and petrochemical giants offering direct raw material supply chains.",
-      adv4Title: "Robust Infrastructure",
-      adv4Desc: "High-capacity gas pipelines, high-speed fiber networks, and chemical-grade industrial drainage systems."
-    },
-    khavda: {
-      heroBadge: "Green Energy Corridor",
-      heroTitle: "Utility-Scale Land in <span>Khavda Solar Park</span>",
-      heroSubtitle: "Strategic land bank availability suitable for massive wind-solar hybrid projects, private solar farms, and green hydrogen initiatives.",
-      adv1Title: "Highest Solar Radiation",
-      adv1Desc: "Kutch's desert zones offer the highest solar irradiance and constant wind velocities in the country.",
-      adv2Title: "Power Grid Integration",
-      adv2Desc: "Proximity to national grid evacuation lines and high-voltage substations for immediate power transfer.",
-      adv3Title: "Aggregated Clean Titles",
-      adv3Desc: "Duly scouted, surveyed, and boundary-marked government-approved lease plots ready for project setup.",
-      adv4Title: "High Returns on Lease",
-      adv4Desc: "Long-term revenue yield model with stable corporate power purchasing agreements (PPAs)."
-    },
-    gidc: {
-      heroBadge: "Structured Manufacturing Zone",
-      heroTitle: "Plots in <span>GIDC Industrial Estates</span>",
-      heroSubtitle: "Acquire pre-cleared industrial plots in Gandhidham, Anjar, Kidana, and Bhuj GIDC estates equipped with industrial amenities.",
-      adv1Title: "Plug & Play Plots",
-      adv1Desc: "Ready concrete boundary plots with internal asphalt roads, high-tension power, and centralized sewage systems.",
-      adv2Title: "Fast-Track Approval",
-      adv2Desc: "Simplified factory license registry and streamlined local municipal clearance mechanisms.",
-      adv3Title: "Skilled Labor Pool",
-      adv3Desc: "Located near dense residential hubs in Gandhidham and Anjar, guaranteeing easy access to industrial labor.",
-      adv4Title: "Zoning Permissions",
-      adv4Desc: "Duly certified zones for chemicals, engineering, wood-crafting, mineral-processing, and heavy fabrication."
-    },
-    dholavira: {
-      heroBadge: "Heritage & Tourism Belt",
-      heroTitle: "Resort Land in <span>Dholavira Tourism Zone</span>",
-      heroSubtitle: "Invest in commercial hospitality and resort plots near the UNESCO World Heritage site and the scenic Road to Heaven.",
-      adv1Title: "UNESCO Tourism Boom",
-      adv1Desc: "Massive inflow of domestic and international cultural tourists visiting the ancient Harappan civilization site.",
-      adv2Title: "Scenic Highway Frontage",
-      adv2Desc: "Plots positioned directly on the new 4-lane Highway connecting Dholavira with the Great Rann of Kutch.",
-      adv3Title: "Hospitality Zoning",
-      adv3Desc: "Zoned specifically for eco-resorts, heritage hotels, luxury tents, and tourist amenities centers.",
-      adv4Title: "Unique Landscape Appeal",
-      adv4Desc: "Breathtaking views of the salt desert flats combined with pristine local wildlife ecosystems."
+    adipur: {
+      heroBadge: "Adipur Commercial & Retail Belt",
+      heroTitle: "Commercial Properties for Rent in <span>Adipur</span>",
+      heroSubtitle: "Discover high-demand retail market shops, commercial office suites, and rental showrooms near Adipur Station Road and primary commercial markets.",
+      adv1Title: "Station Road Market Frontage",
+      adv1Desc: "High visibility commercial shops positioned directly on Adipur's main commercial artery.",
+      adv2Title: "Boutique Office Units",
+      adv2Desc: "Ready-to-move-in commercial office units suitable for doctors, lawyers, accountants, and consultants.",
+      adv3Title: "Retail Showrooms",
+      adv3Desc: "Spacious multi-level showrooms with wide glass frontages ideal for apparel brands and electronics stores.",
+      adv4Title: "Clear Property Titles",
+      adv4Desc: "100% verified ownership records, commercial tax clearance, and straightforward rental agreements."
     },
     listings: [
-      { id: 1, title: "12.5 Acres NA Commercial Plot", location: "Kandla Port Corridor", tag: "Logistics Park Plot", area: "12.5 Acres", year: "2025", details: ["100% NA & Title Clear (single owner)", "Wide 60-meter highway frontage"] },
-      { id: 2, title: "5.2 Acres Industrial Plot", location: "Tuna Port Corridor", tag: "Warehouse & Storage", area: "5.2 Acres", year: "2024", details: ["Pre-approved industrial zoning", "Water & power connection ready"] },
-      { id: 3, title: "15.0 Acres Manufacturing Land", location: "GIDC Industrial Estates", tag: "Heavy Manufacturing", area: "15.0 Acres", year: "2025", details: ["Ready concrete boundary plots", "Centralized sewage systems"] },
-      { id: 4, title: "20.0 Acres Renewable Plot", location: "Khavda Solar Park", tag: "Solar Installation", area: "20.0 Acres", year: "2025", details: ["Proximity to evacuation lines", "Scouted and boundary marked"] }
+      { id: 1, title: "1,200 Sq.Ft Furnished Office Space", location: "Tagor Road Commercial Complex, Gandhidham", tag: "Corporate Office", area: "1,200 Sq.Ft", year: "2026", details: ["Air-conditioned with 15 workstations", "Private cabin, conference room & pantry", "100% power backup & elevator access"] },
+      { id: 2, title: "850 Sq.Ft Ground Floor Market Shop", location: "Main Market Road, Sector 8, Gandhidham", tag: "Retail Shop", area: "850 Sq.Ft", year: "2026", details: ["Heavy customer footfall area", "20-foot glass frontage for high brand visibility", "Suitable for retail brands, banks & cafes"] },
+      { id: 3, title: "1,500 Sq.Ft Main Market Showroom", location: "Station Road Market, Adipur", tag: "Showroom", area: "1,500 Sq.Ft", year: "2026", details: ["Prime corner shop location with top visibility", "Mezzanine floor for extra storage or office", "Ready for retail, apparel & electronics"] },
+      { id: 4, title: "2,500 Sq.Ft Commercial Lease Plot", location: "Gandhidham Highway Junction", tag: "Commercial Plot", area: "2,500 Sq.Ft", year: "2026", details: ["Wide road frontage for commercial display", "Available on long-term 5-year to 10-year lease", "Clear commercial municipal zoning"] }
     ],
     pdfs: []
   };
@@ -455,11 +359,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // 11. Determine Current Page Key & Apply Overrides
   const path = window.location.pathname.toLowerCase();
   let currentPageKey = null;
-  if (path.includes('kandla-port')) currentPageKey = 'kandla';
-  else if (path.includes('mundra-sez')) currentPageKey = 'mundra';
-  else if (path.includes('khavda-solar')) currentPageKey = 'khavda';
-  else if (path.includes('gidc-estates')) currentPageKey = 'gidc';
-  else if (path.includes('dholavira-tourism')) currentPageKey = 'dholavira';
+  if (path.includes('gandhidham')) currentPageKey = 'gandhidham';
+  else if (path.includes('adipur')) currentPageKey = 'adipur';
 
   if (currentPageKey && siteContent[currentPageKey]) {
     const pageData = siteContent[currentPageKey];

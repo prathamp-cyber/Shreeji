@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gandhidham Commercial Rental & Leasing | Offices, Shops & Commercial Plots</title>
+  <meta name="description" content="Commercial rental properties in Gandhidham. Premium office spaces, retail shops for rent, showrooms on Tagor Road, and commercial plots on long-term lease.">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+          <div class="logo-text">Shreeji<span>RealEstate</span></div>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/overview" class="nav-link">Overview</a></li>
+          <li class="dropdown">
+            <div class="dropdown-toggle nav-link active">
+              Target Areas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div class="dropdown-menu">
+              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Gandhidham</a>
+              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Adipur</a>
+            </div>
+          </li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/process" class="nav-link">Process</a></li>
+          <li><a href="/faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="guj">ગુજ</button>
+          </div>
+          <button class="btn btn-primary" onclick="openModal('buy')" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+            Contact Us
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" style="min-height: 65vh;">
+    <img src="/images/hero.png" alt="Gandhidham Commercial Real Estate" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="glow-orb glow-orb-1"></div>
+
+    <div class="container">
+      <div class="hero-content reveal" style="padding: 3rem 0;">
+        <div class="hero-badge">
+          <i class="fa-solid fa-building"></i> Gandhidham City Commercial Hub
+        </div>
+        <h1 class="hero-title">
+          Rental Commercial Properties in <span>Gandhidham</span>
+        </h1>
+        <p class="hero-subtitle">
+          Explore top rental shops, corporate office spaces, retail showrooms, and commercial lease plots along Tagor Road, Main Market, and Sector 1-12 in Gandhidham.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary" onclick="openModal('buy')">
+            <i class="fa-solid fa-magnifying-glass-location"></i> Find Commercial Rental Space
+          </button>
+          <button class="btn btn-secondary" onclick="openModal('sell')">
+            <i class="fa-solid fa-key"></i> Rent Out Property in Gandhidham
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gandhidham Map PDF Section (Ready for user PDF) -->
+  <section class="section" id="gandhidhamMapSection" style="background: var(--bg-slate);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold"><i class="fa-solid fa-file-pdf"></i> City Planning Document</span>
+        <h2 class="section-title">Gandhidham Commercial Master Map (PDF)</h2>
+        <p class="section-subtitle">Official sector layout, commercial plot grid, and market zone roadmap for Gandhidham City.</p>
+      </div>
+
+      <div style="background: var(--bg-white); border-radius: 24px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);" class="reveal">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="font-size: 2.5rem; color: #EF4444;"><i class="fa-solid fa-file-pdf"></i></div>
+            <div>
+              <h3 style="font-size: 1.25rem; color: var(--primary-dark);" id="gandhidhamPdfTitle">MASTER-PLAN.pdf</h3>
+              <p style="color: var(--text-muted); font-size: 0.85rem;">Official Gandhidham Town Planning & Sector Layout Master Plan</p>
+            </div>
+          </div>
+          <a href="/MASTER-PLAN.pdf" id="gandhidhamPdfDownloadBtn" class="btn btn-primary" download="Gandhidham-Commercial-Master-Plan.pdf" style="gap: 0.5rem;"><i class="fa-solid fa-download"></i> Download Master Plan PDF</a>
+        </div>
+
+        <!-- Embedded Interactive PDF Viewer -->
+        <div id="gandhidhamPdfViewer" style="width: 100%; height: 650px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: #525659;">
+          <iframe src="/MASTER-PLAN.pdf" width="100%" height="100%" style="border: none;">
+            <p style="padding: 2rem; text-align: center; color: white;">Your browser does not support inline PDF viewing. <a href="/MASTER-PLAN.pdf" style="color: var(--accent-gold);">Click here to download MASTER-PLAN.pdf</a></p>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Commercial Rental Listings in Gandhidham -->
+  <section class="section" style="background: var(--bg-white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag emerald">Verified Rental Properties</span>
+        <h2 class="section-title">Commercial Spaces Available in Gandhidham</h2>
+        <p class="section-subtitle">Hand-picked shops, office spaces, and commercial plots available for immediate lease.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card buyer-card reveal">
+          <div class="tag" style="background: var(--primary); color: white; margin-bottom: 1rem;">Corporate Office Suite</div>
+          <h3>1,200 Sq.Ft Furnished Office Space</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem 0;"><i class="fa-solid fa-location-dot"></i> Tagor Road Commercial Complex, Gandhidham</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Fully air-conditioned with 15 workstations</li>
+            <li><i class="fa-solid fa-check"></i> Private cabin, conference room & pantry</li>
+            <li><i class="fa-solid fa-check"></i> 100% power backup & elevator access</li>
+          </ul>
+          <button class="btn btn-primary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Inquire Monthly Rent</button>
+        </div>
+
+        <div class="service-card seller-card reveal">
+          <div class="tag" style="background: var(--accent-gold-dark); color: white; margin-bottom: 1rem;">Prime Retail Shop</div>
+          <h3>850 Sq.Ft Ground Floor Market Shop</h3>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem 0;"><i class="fa-solid fa-location-dot"></i> Main Market Road, Sector 8, Gandhidham</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-check"></i> Heavy customer footfall area</li>
+            <li><i class="fa-solid fa-check"></i> 20-foot glass frontage for brand visibility</li>
+            <li><i class="fa-solid fa-check"></i> Ideal for retail brands, banks & cafes</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Schedule Property Visit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Dialog -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        <h2 id="modalTitle" style="color: white; font-size: 1.5rem;">Commercial Rental Inquiry - Gandhidham</h2>
+        <p id="modalSub" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 0.25rem;">Our commercial property manager will share rental rates & layouts.</p>
+        
+        <div class="modal-tabs">
+          <button class="modal-tab active" id="buyTab"><i class="fa-solid fa-cart-shopping"></i> I Want to Rent Commercial Space</button>
+          <button class="modal-tab" id="sellTab"><i class="fa-solid fa-tag"></i> I Want to Rent Out My Property</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <form id="buyerForm" class="form-grid">
+          <div class="form-group">
+            <label class="form-label">City / Location</label>
+            <input type="text" class="form-input" value="Gandhidham Commercial Hub" readonly>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Space Type Required</label>
+            <select class="form-select" required>
+              <option value="">Select Property Type</option>
+              <option value="shop">Retail Shop / Showroom</option>
+              <option value="office">Corporate Office Suite</option>
+              <option value="plot">Commercial Land / Lease Plot</option>
+              <option value="godown">Commercial Warehouse / Godown</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Full Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Rental Inquiry</button>
+          </div>
+        </form>
+
+        <form id="sellerForm" class="form-grid" style="display: none;">
+          <div class="form-group">
+            <label class="form-label">Gandhidham Property Address</label>
+            <input type="text" class="form-input" placeholder="e.g. Sector 9 Commercial Complex" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Built-up Area (Sq.Ft)</label>
+            <input type="text" class="form-input" placeholder="e.g. 1,000 Sq.Ft" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" placeholder="Owner / Representative Name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-secondary" style="width: 100%;">List Property for Rent</button>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3>Inquiry Received!</h3>
+          <p>Our Gandhidham commercial manager will contact you within 24 hours.</p>
+          <button class="btn btn-outline" onclick="closeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <p>© 2026 Shreeji Real Estate Consultant. Gandhidham Commercial Hub.</p>
+        <p><a href="/" style="color: var(--accent-gold);">Back to Main Home</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
