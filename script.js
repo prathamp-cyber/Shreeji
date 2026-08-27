@@ -448,83 +448,54 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  function applyLanguage(lang) {
-    const elements = document.querySelectorAll('[data-i18n]');
-    elements.forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dictionary[lang] && dictionary[lang][key]) {
-        el.innerHTML = dictionary[lang][key];
-      }
-    });
-    renderDynamicListings(lang);
-    localStorage.setItem('preferred_language', lang);
-  }
-
-  langBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      langBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const lang = btn.getAttribute('data-lang');
-      applyLanguage(lang);
-    });
-  });
-
-  // Restore saved language preference on load
-  const savedLang = localStorage.getItem('preferred_language') || 'en';
-  const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
-  if (targetBtn) {
-    langBtns.forEach(b => b.classList.remove('active'));
-    targetBtn.classList.add('active');
-    applyLanguage(savedLang);
-  }
-
-  // 10. Admin Content Dynamic Loading & Rendering
-  const defaultSiteContent = {
-    home: {
-      heroTitle: "Your Premier Partner for <span>Rental Commercial Properties</span> in Gandhidham & Adipur",
-      heroSubtitle: "Expert guidance for renting, leasing, buying, and listing commercial shops, corporate offices, showrooms, and commercial plots across Gandhidham & Adipur, Gujarat.",
-      contactPhone: "+91 70162 70941",
-      contactEmail: "shreejirealestate@gmail.com",
-      storyHeadline: "Shreeji Real Estate Consultancy",
-      storyParagraph: "Shreeji Real Estate is your dedicated commercial property & rental consultancy headquartered in Gandhidham, Kutch, Gujarat. With 10+ years of local market leadership, we connect business owners, retail brands, and corporate tenants with top commercial rental spaces, offices, and plots in Gandhidham and Adipur.",
-      statYears: "10+ Years",
-      statAcres: "250+ Spaces",
-      statClients: "100+ Clients"
-    },
-    gandhidham: {
-      heroBadge: "Gandhidham Commercial Hub",
-      heroTitle: "Rental Commercial Properties in <span>Gandhidham</span>",
-      heroSubtitle: "Explore top rental shops, corporate office spaces, retail showrooms, and commercial lease plots along Tagor Road, Main Market, and Sector 1-12 in Gandhidham.",
-      adv1Title: "Tagore Road Commercial Sector",
-      adv1Desc: "High-demand corporate office buildings and furnished commercial suites with 24/7 power backup and elevator access.",
-      adv2Title: "Main Market Retail Outlets",
-      adv2Desc: "Prime ground-floor shop spaces with heavy daily customer footfall ideal for retail brands, banks, and cafes.",
-      adv3Title: "Commercial Plot Leasing",
-      adv3Desc: "Open roadside commercial plots available on long-term lease agreements for custom commercial construction.",
-      adv4Title: "Hassle-Free Lease Deeds",
-      adv4Desc: "Complete legal verification, background check of tenants/landlords, and registered 11-month lease deed preparation."
-    },
-    adipur: {
-      heroBadge: "Adipur Commercial & Retail Belt",
-      heroTitle: "Commercial Properties for Rent in <span>Adipur</span>",
-      heroSubtitle: "Discover high-demand retail market shops, commercial office suites, and rental showrooms near Adipur Station Road and primary commercial markets.",
-      adv1Title: "Station Road Market Frontage",
-      adv1Desc: "High visibility commercial shops positioned directly on Adipur's main commercial artery.",
-      adv2Title: "Boutique Office Units",
-      adv2Desc: "Ready-to-move-in commercial office units suitable for doctors, lawyers, accountants, and consultants.",
-      adv3Title: "Retail Showrooms",
-      adv3Desc: "Spacious multi-level showrooms with wide glass frontages ideal for apparel brands and electronics stores.",
-      adv4Title: "Clear Property Titles",
-      adv4Desc: "100% verified ownership records, commercial tax clearance, and straightforward rental agreements."
-    },
-    listings: [
-      { id: 1, title: "1,200 Sq.Ft Furnished Office Space", location: "Tagor Road Commercial Complex, Gandhidham", tag: "Corporate Office", area: "1,200 Sq.Ft", year: "2026", details: ["Air-conditioned with 15 workstations", "Private cabin, conference room & pantry", "100% power backup & elevator access"] },
-      { id: 2, title: "850 Sq.Ft Ground Floor Market Shop", location: "Main Market Road, Sector 8, Gandhidham", tag: "Retail Shop", area: "850 Sq.Ft", year: "2026", details: ["Heavy customer footfall area", "20-foot glass frontage for high brand visibility", "Suitable for retail brands, banks & cafes"] },
-      { id: 3, title: "1,500 Sq.Ft Main Market Showroom", location: "Station Road Market, Adipur", tag: "Showroom", area: "1,500 Sq.Ft", year: "2026", details: ["Prime corner shop location with top visibility", "Mezzanine floor for extra storage or office", "Ready for retail, apparel & electronics"] },
-      { id: 4, title: "2,500 Sq.Ft Commercial Lease Plot", location: "Gandhidham Highway Junction", tag: "Commercial Plot", area: "2,500 Sq.Ft", year: "2026", details: ["Wide road frontage for commercial display", "Available on long-term 5-year to 10-year lease", "Clear commercial municipal zoning"] }
+  // Multi-lingual dynamic land & commercial listings
+  const translatedListings = {
+    en: [
+      { id: 1, title: "1,200 Sq.Ft Furnished Office Space", location: "Tagor Road Commercial Complex, Gandhidham", tag: "Corporate Office", details: ["Air-conditioned with 15 workstations", "Private cabin, conference room & pantry", "100% power backup & elevator access"], btn: "Inquire Details & Rent" },
+      { id: 2, title: "850 Sq.Ft Ground Floor Market Shop", location: "Main Market Road, Sector 8, Gandhidham", tag: "Retail Shop", details: ["Heavy customer footfall area", "20-foot glass frontage for high brand visibility", "Suitable for retail brands, banks & cafes"], btn: "Inquire Details & Rent" },
+      { id: 3, title: "1,500 Sq.Ft Main Market Showroom", location: "Station Road Market, Adipur", tag: "Showroom", details: ["Prime corner shop location with top visibility", "Mezzanine floor for extra storage or office", "Ready for retail, apparel & electronics"], btn: "Inquire Details & Rent" },
+      { id: 4, title: "2,500 Sq.Ft Commercial Lease Plot", location: "Gandhidham Highway Junction", tag: "Commercial Plot", details: ["Wide road frontage for commercial display", "Available on long-term 5-year to 10-year lease", "Clear commercial municipal zoning"], btn: "Inquire Details & Rent" }
     ],
-    pdfs: []
+    guj: [
+      { id: 1, title: "૧,૨૦૦ સ્ક્વેર ફીટ સુસજ્જ ઓફિસ સ્પેસ", location: "ટાગોર રોડ કોમર્શિયલ કોમ્પ્લેક્સ, ગાંધીધામ", tag: "કોર્પોરેટ ઓફિસ", details: ["૧૫ વર્કસ્ટેશન સાથે એર-કન્ડિશન્ડ", "પ્રાઈવેટ કેબિન, કોન્ફરન્સ રૂમ અને પેન્ટ્રી", "૧૦૦% પાવર બેકઅપ અને લિફ્ટ સુવિધા"], btn: "વિગતો અને ભાડું મેળવો" },
+      { id: 2, title: "૮૫૦ સ્ક્વેર ફીટ ગ્રાઉન્ડ ફ્લોર માર્કેટ શોપ", location: "મેઇન માર્કેટ રોડ, સેક્ટર ૮, ગાંધીધામ", tag: "રિટેલ દુકાન", details: ["વધુ ગ્રાહકો ધરાવતો મુખ્ય વિસ્તાર", "ઉત્તમ દ્રશ્યતા માટે ૨૦-ફૂટ કાચનું ફ્રન્ટેજ", "રિટેલ બ્રાન્ડ્સ, બેંકો અને કેફે માટે યોગ્ય"], btn: "વિગતો અને ભાડું મેળવો" },
+      { id: 3, title: "૧,૫૦૦ સ્ક્વેર ફીટ માર્કેટ શોરૂમ", location: "સ્ટેશન રોડ માર્કેટ, આદિપુર", tag: "શોરૂમ", details: ["ઉત્કૃષ્ટ લોકેશન સાથે પ્રાઇમ કોર્નર દુકાન", "સ્ટોરેજ અથવા ઓફિસ માટે મેઝઝાનિન ફ્લોર", "રિટેલ અને ઈલેક્ટ્રોનિક્સ માટે તૈયાર"], btn: "વિગતો અને ભાડું મેળવો" },
+      { id: 4, title: "૨,૫૦૦ સ્ક્વેર ફીટ કોમર્શિયલ લીઝ પ્લોટ", location: "ગાંધીધામ હાઇવે જંકશન", tag: "કોમર્શિયલ પ્લોટ", details: ["વ્યાપારી પ્રદર્શન માટે પહોળો રોડ ફ્રન્ટેજ", "૫ થી ૧૦ વર્ષના લાંબા ગાળાના લીઝ પર ઉપલબ્ધ", "સ્પષ્ટ કોમર્શિયલ મ્યુનિસિપલ મંજૂરી"], btn: "વિગતો અને ભાડું મેળવો" }
+    ],
+    hi: [
+      { id: 1, title: "1,200 वर्ग फुट सुसज्जित ऑफिस स्पेस", location: "टैगोर रोड कमर्शियल कॉम्प्लेक्स, गांधीधाम", tag: "कॉर्पोरेट ऑफिस", details: ["15 वर्कस्टेशन के साथ पूरी तरह एसी", "निजी केबिन, कॉन्फ्रेंस रूम और पेंट्री", "100% पावर बैकअप और लिफ्ट सुविधा"], btn: "विवरण और किराया जानें" },
+      { id: 2, title: "850 वर्ग फुट ग्राउंड floor मार्केट शॉप", location: "मेन मार्केट रोड, सेक्टर 8, गांधीधाम", tag: "रिटेल दुकान", details: ["भारी ग्राहक फुटफॉल वाला मुख्य क्षेत्र", "बेहतर दृश्यता के लिए 20-फीट ग्लास फ्रंट", "रिटेल ब्रांड्स, बैंकों और कैफे के लिए उपयुक्त"], btn: "विवरण और किराया जानें" },
+      { id: 3, title: "1,500 वर्ग फुट मेन मार्केट शोरूम", location: "स्टेशन रोड मार्केट, आदिपुर", tag: "शोरूम", details: ["उत्कृष्ट दृश्यता वाली प्राइम कॉर्नर दुकान", "अतिरिक्त स्टोरेज या ऑफिस हेतु मेजेनाइन फ्लोर", "कपड़ों व इलेक्ट्रॉनिक्स रिटेल के लिए तैयार"], btn: "विवरण और किराया जानें" },
+      { id: 4, title: "2,500 वर्ग फुट कमर्शियल लीज प्लॉट", location: "गांधीधाम हाईवे जंक्शन", tag: "कमर्शियल प्लॉट", details: ["कमर्शियल प्रदर्शन के लिए चौड़ा रोड फ्रंट", "5 से 10 साल के लंबे समय के लीज पर उपलब्ध", "स्पष्ट कमर्शियल नगर निगम मंजूरी"], btn: "विवरण और किराया जानें" }
+    ]
   };
+
+  function renderDynamicListings(lang = 'en') {
+    const dynamicListingsContainer = document.getElementById('dynamicListingsContainer');
+    if (!dynamicListingsContainer) return;
+
+    const currentLang = lang || localStorage.getItem('preferred_language') || 'en';
+    const listingsToRender = translatedListings[currentLang] || translatedListings.en;
+
+    dynamicListingsContainer.innerHTML = '';
+    listingsToRender.forEach(listing => {
+      const card = document.createElement('div');
+      card.className = 'service-card active';
+      card.style.borderTop = '6px solid var(--accent-gold)';
+      card.innerHTML = `
+        <div class="tag" style="background: var(--primary); color: white; margin-bottom: 1rem;">${listing.tag}</div>
+        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--primary-dark); font-weight: 700;">${listing.title}</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+          <i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> ${listing.location}
+        </p>
+        <ul class="service-list" style="margin-bottom: 1.5rem;">
+          ${listing.details.map(detail => `<li><i class="fa-solid fa-circle-check" style="color: var(--accent-emerald);"></i> ${detail}</li>`).join('')}
+        </ul>
+        <button class="btn btn-primary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">${listing.btn}</button>
+      `;
+      dynamicListingsContainer.appendChild(card);
+    });
+  }
 
   const siteContent = JSON.parse(localStorage.getItem('site_content')) || defaultSiteContent;
 
