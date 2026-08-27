@@ -350,7 +350,15 @@ document.addEventListener('DOMContentLoaded', () => {
       step5_desc: 'Key handover and utility setup support for immediate business operations.',
       faq_tag: 'Clarifications',
       faq_title: 'Commercial Property FAQ',
-      faq_subtitle: 'Frequently asked questions regarding commercial renting, lease terms, and documentation in Gandhidham & Adipur.'
+      faq_subtitle: 'Frequently asked questions regarding commercial renting, lease terms, and documentation in Gandhidham & Adipur.',
+      faq_q1: 'What types of commercial rental properties do you offer in Gandhidham & Adipur?',
+      faq_a1: 'We specialize in high-footfall retail market shops, fully furnished & bare-shell corporate office space, high-visibility main market showrooms, and roadside commercial lease plots across Tagore Road, Main Market, Sector 1-12 in Gandhidham, and Station Road in Adipur.',
+      faq_q2: 'What is the standard lease deed duration and rental agreement process in Gandhidham?',
+      faq_a2: 'Commercial properties in Gandhidham & Adipur are typically leased under 11-month registered lease agreements or long-term 3-to-9 year corporate lease deeds with renewable escalation terms.',
+      faq_q3: 'How do you assist commercial tenants and landlords with legal due diligence?',
+      faq_a3: 'We handle 100% of title verification, property ownership checks, municipal tax clearance, tenant background verification, and formal registered lease deed drafting for smooth operations.',
+      faq_q4: 'What are the typical security deposit and brokerage terms for renting commercial spaces?',
+      faq_a4: 'Security deposits usually range from 3 to 6 months of rent depending on the location and property type, with flexible rent negotiation and transparent fee structures for both tenants and landlords.'
     },
     guj: {
       nav_home: 'હોમ',
@@ -418,7 +426,15 @@ document.addEventListener('DOMContentLoaded', () => {
       step5_desc: 'વ્યવસાય શરૂ કરવા માટે ચાવી સોંપણી અને સુવિધાઓનું સેટઅપ.',
       faq_tag: 'સામાન્ય પ્રશ્નો',
       faq_title: 'કોમર્શિયલ પ્રોપર્ટી પ્રશ્નોત્તરી',
-      faq_subtitle: 'ગાંધીધામ અને આદિપુરમાં ભાડાના કરાર અને દસ્તાવેજો અંગે વારંવાર પૂછાતા પ્રશ્નો.'
+      faq_subtitle: 'ગાંધીધામ અને આદિપુરમાં ભાડાના કરાર અને દસ્તાવેજો અંગે વારંવાર પૂછાતા પ્રશ્નો.',
+      faq_q1: 'ગાંધીધામ અને આદિપુરમાં તમે કયા પ્રકારની ભાડાની કોમર્શિયલ પ્રોપર્ટી પૂરી પાડો છો?',
+      faq_a1: 'અમે ગાંધીધામમાં ટાગોર રોડ, સેક્ટર ૧-૧૨, મેઇન માર્કેટ અને આદિપુરમાં સ્ટેશન રોડ પર વધુ ગ્રાહકો ધરાવતી રિટેલ દુકાનો, સુસજ્જ કોર્પોરેટ ઓફિસો, માર્કેટ શોરૂમ અને કોમર્શિયલ પ્લોટ પૂરા પાડીએ છીએ.',
+      faq_q2: 'ગાંધીધામમાં ભાડાના કરાર અને લીઝ ડીડની સમયમર્યાદા શું હોય છે?',
+      faq_a2: 'ગાંધીધામ અને આદિપુરમાં કોમર્શિયલ પ્રોપર્ટી સામાન્ય રીતે ૧૧ મહિનાના નોંધાયેલા લીઝ કરાર અથવા ૩ થી ૯ વર્ષના કોર્પોરેટ લીઝ ડીડ હેઠળ ભાડે આપવામાં આવે છે.',
+      faq_q3: 'તમે ભાડૂઆતો અને માલિકોને કાનૂની ચકાસણીમાં કેવી રીતે મદદ કરો છો?',
+      faq_a3: 'અમે મિલકતની માલિકી ચકાસણી, ટાઇટલ ચેક, મ્યુનિસિપલ ટેક્સ ક્લિયરન્સ અને ૧૦૦% કાયદાકીય રજીસ્ટર્ડ લીઝ ડીડ તૈયાર કરીએ છીએ.',
+      faq_q4: 'કોમર્શિયલ જગ્યા ભાડે લેવા માટે સિક્યોરિટી ડિપોઝિટની શરતો શું હોય છે?',
+      faq_a4: 'સ્થળ અને પ્રોપર્ટીના પ્રકાર આધારે સામાન્ય રીતે ૩ થી ૬ મહિનાની સિક્યોરિટી ડિપોઝિટ હોય છે, જેમાં સરળ વાટાઘાટો અને પારદર્શક શરતો પૂરી પાડવામાં આવે છે.'
     },
     hi: {
       nav_home: 'होम',
@@ -486,7 +502,15 @@ document.addEventListener('DOMContentLoaded', () => {
       step5_desc: 'तत्काल व्यवसाय संचालन हेतु चाबी सौंपना और सेटअप सहायता।',
       faq_tag: 'सामान्य प्रश्न',
       faq_title: 'कमर्शियल प्रॉपर्टी प्रश्नोत्तरी',
-      faq_subtitle: 'गांधीधाम और आदिपुर में रेंटल एग्रीमेंट और दस्तावेजों के संबंध में अक्सर पूछे जाने वाले प्रश्न।'
+      faq_subtitle: 'गांधीधाम और आदिपुर में रेंटल एग्रीमेंट और दस्तावेजों के संबंध में अक्सर पूछे जाने वाले प्रश्न।',
+      faq_q1: 'गांधीधाम और आदिपुर में आप किस प्रकार की किराए की कमर्शियल प्रॉपर्टी प्रदान करते हैं?',
+      faq_a1: 'हम गांधीधाम में टैगोर रोड, मेन मार्केट, सेक्टर 1-12 और आदिपुर में स्टेशन रोड पर भारी फुटफॉल वाली रिटेल दुकानें, पूरी तरह सुसज्जित कॉर्पोरेट ऑफिस, शोरूम और कमर्शियल प्लॉट प्रदान करते हैं।',
+      faq_q2: 'गांधीधाम में रेंटल एग्रीमेंट और लीज डीड की अवधि क्या होती है?',
+      faq_a2: 'गांधीधाम और आदिपुर में कमर्शियल प्रॉपर्टी आमतौर पर 11 महीने के पंजीकृत लीज समझौते या 3 से 9 साल के कॉर्पोरेट लीज डीड के तहत किराए पर दी जाती हैं।',
+      faq_q3: 'आप किरायेदारों और मकान मालिकों को कानूनी सत्यापन में कैसे सहायता करते हैं?',
+      faq_a3: 'हम संपत्ति के स्वामित्व की जांच, टाइटल सत्यापन, नगर निगम टैक्स क्लीयरेंस और 100% कानूनी रूप से पंजीकृत लीज डीड तैयार करते हैं।',
+      faq_q4: 'कमर्शियल स्पेस किराए पर लेने हेतु सिक्योरिटी डिपॉजिट और शर्तें क्या हैं?',
+      faq_a4: 'स्थान और संपत्ति के प्रकार के आधार पर आमतौर पर 3 से 6 महीने का सिक्योरिटी डिपॉजिट होता है, जिसमें पारदर्शी बातचीत और आसान शर्तें शामिल हैं।'
     }
   };
 
