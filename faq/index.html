@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LandInKutch Consultant | Commercial & Industrial Land in Kutch</title>
+  <meta name="description" content="Trusted land consultant in Kutch specializing in industrial land, GIDC plots, commercial properties near Kandla, Mundra & Tuna ports. Expert due diligence and land brokerage.">
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    (function() {
+      var perf = window.performance && window.performance.getEntriesByType ? window.performance.getEntriesByType("navigation")[0] : null;
+      var isReload = (perf && perf.type === "reload") || (window.performance && window.performance.navigation && window.performance.navigation.type === 1);
+      if (isReload) {
+        if (window.location.pathname !== '/' && window.location.pathname !== '/index.html' && window.location.pathname !== '') {
+          window.location.replace('/');
+        } else {
+          window.scrollTo(0, 0);
+          if (window.location.hash) {
+            history.replaceState(null, null, '/');
+          }
+        }
+      }
+    })();
+  </script>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sticky Navigation Header -->
+  <header class="header" id="header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="/" class="logo">
+          <div class="logo-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+          <div class="logo-text">LandIn<span>Kutch</span></div>
+        </a>
+        
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/" class="nav-link active">Home</a></li>
+          <li><a href="/overview" class="nav-link">Overview</a></li>
+          <li><a href="/industries" class="nav-link">Industries</a></li>
+          <li class="dropdown">
+            <div class="dropdown-toggle nav-link">
+              Target Areas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+            <div class="dropdown-menu">
+              <a href="/kandla-port" class="dropdown-item"><i class="fa-solid fa-anchor"></i> Kandla Port Corridor</a>
+              <a href="/mundra-sez" class="dropdown-item"><i class="fa-solid fa-ship"></i> Mundra SEZ & Port</a>
+              <a href="/khavda-solar" class="dropdown-item"><i class="fa-solid fa-sun"></i> Khavda Solar Park</a>
+              <a href="/gidc-estates" class="dropdown-item"><i class="fa-solid fa-industry"></i> GIDC Industrial Estates</a>
+              <a href="/dholavira-tourism" class="dropdown-item"><i class="fa-solid fa-landmark"></i> Dholavira Tourism Zone</a>
+            </div>
+          </li>
+          <li><a href="/services" class="nav-link">Services</a></li>
+          <li><a href="/process" class="nav-link">Process</a></li>
+          <li><a href="/faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="guj">ગુજ</button>
+          </div>
+          <button class="btn btn-primary" onclick="openModal('buy')" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
+            Contact Us
+          </button>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dynamic Hero Section -->
+  <section class="hero" id="home">
+    <img src="/images/hero.png" alt="Kutch Commercial Land Plot" class="hero-bg">
+    <div class="hero-overlay"></div>
+    <div class="glow-orb glow-orb-1"></div>
+    <div class="glow-orb glow-orb-2"></div>
+
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="hero-badge">
+          <i class="fa-solid fa-award"></i> Premier Land Brokerage & Property Consultancy
+        </div>
+        <h1 class="hero-title" data-i18n="hero_title">
+          Your Trusted Land Consultant for <span>Commercial & Industrial Land</span> in Kutch
+        </h1>
+        <p class="hero-subtitle" data-i18n="hero_sub">
+          Expert guidance for strategic land transactions near Kandla, Mundra, Tuna Ports & Dholavira UNESCO Site. Specializing in Gandhidham, Anjar, Bhuj & GIDC estates.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-secondary" onclick="openModal('sell')" data-i18n="sell_btn">
+            <i class="fa-solid fa-hand-holding-dollar"></i> Looking to Sell Land?
+          </button>
+          <button class="btn btn-primary" onclick="openModal('buy')" data-i18n="buy_btn">
+            <i class="fa-solid fa-magnifying-glass-location"></i> Looking to Buy Land?
+          </button>
+        </div>
+
+        <div class="hero-trust-row">
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="trust-text">
+              <h4>10+ Years</h4>
+              <p>Market Experience</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="trust-text">
+              <h4>500+ Acres</h4>
+              <p>Land Transacted</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><i class="fa-solid fa-users-check"></i></div>
+            <div class="trust-text">
+              <h4>100+ Clients</h4>
+              <p>Satisfied Investors</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview Highlights Banner -->
+  <section class="container" id="overview">
+    <div class="overview-banner reveal">
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="overview-icon"><i class="fa-solid fa-warehouse"></i></div>
+          <div>
+            <h3>Industrial Plots</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">GIDC compliant parcels with high power grid access & wide road frontage.</p>
+          </div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-icon"><i class="fa-solid fa-file-contract"></i></div>
+          <div>
+            <h3>NA & Title Clear</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">100% legally verified non-agricultural land ready for instant development.</p>
+          </div>
+        </div>
+        <div class="overview-card">
+          <div class="overview-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <div>
+            <h3>Port Proximity</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);">Strategic logistics land parcels near Mundra and Kandla port gates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries We Serve Section -->
+  <section class="section" id="industries">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold">Specialized Land Solutions</span>
+        <h2 class="section-title" data-i18n="industries_title">Industries We Specialize In</h2>
+        <p class="section-subtitle">Connecting high-growth industrial sectors with prime land parcels in Gujarat's fastest-growing economic hub.</p>
+      </div>
+
+      <div class="industries-grid">
+        <a href="/khavda-solar" class="industry-card reveal" style="text-decoration: none; color: inherit;">
+          <div>
+            <div class="industry-icon-box"><i class="fa-solid fa-solar-panel"></i></div>
+            <h3 class="industry-title">Renewable Energy & Solar <i class="fa-solid fa-arrow-right" style="font-size: 0.9rem; margin-left: 0.5rem; color: var(--accent-gold);"></i></h3>
+            <p class="industry-desc">Massive clear land parcels near Khavda renewable energy park with substation proximity for wind and solar projects.</p>
+          </div>
+          <div class="industry-tags">
+            <span class="tag">Khavda Corridor</span>
+            <span class="tag">Explore Solar Plots →</span>
+          </div>
+        </a>
+
+        <a href="/mundra-sez" class="industry-card reveal" style="text-decoration: none; color: inherit;">
+          <div>
+            <div class="industry-icon-box"><i class="fa-solid fa-boxes-packing"></i></div>
+            <h3 class="industry-title">Logistics & Warehousing <i class="fa-solid fa-arrow-right" style="font-size: 0.9rem; margin-left: 0.5rem; color: var(--accent-gold);"></i></h3>
+            <p class="industry-desc">Strategic distribution centers and container yard plots situated along National Highways with direct port connectivity.</p>
+          </div>
+          <div class="industry-tags">
+            <span class="tag">Mundra Port</span>
+            <span class="tag">Explore Mundra →</span>
+          </div>
+        </a>
+
+        <a href="/gidc-estates" class="industry-card reveal" style="text-decoration: none; color: inherit;">
+          <div>
+            <div class="industry-icon-box"><i class="fa-solid fa-industry"></i></div>
+            <h3 class="industry-title">Manufacturing Units <i class="fa-solid fa-arrow-right" style="font-size: 0.9rem; margin-left: 0.5rem; color: var(--accent-gold);"></i></h3>
+            <p class="industry-desc">GIDC-approved heavy and light industrial plots equipped with water supply, high-tension power, and waste management.</p>
+          </div>
+          <div class="industry-tags">
+            <span class="tag">GIDC Estate</span>
+            <span class="tag">Explore GIDC →</span>
+          </div>
+        </a>
+
+        <a href="/kandla-port" class="industry-card reveal" style="text-decoration: none; color: inherit;">
+          <div>
+            <div class="industry-icon-box"><i class="fa-solid fa-anchor"></i></div>
+            <h3 class="industry-title">Maritime Logistics Hub <i class="fa-solid fa-arrow-right" style="font-size: 0.9rem; margin-left: 0.5rem; color: var(--accent-gold);"></i></h3>
+            <p class="industry-desc">Specialized land parcels near Deendayal Port Trust (Kandla) with deep-water terminal access and freight highways.</p>
+          </div>
+          <div class="industry-tags">
+            <span class="tag">Kandla Zone</span>
+            <span class="tag">Explore Kandla →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consultancy Services Section -->
+  <section class="section" id="services" style="background: var(--bg-white);">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag emerald">Comprehensive Solutions</span>
+        <h2 class="section-title">Our Land Consultancy Services</h2>
+        <p class="section-subtitle">Tailored advisory services designed to streamline acquisition, legal due diligence, and sales execution.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card buyer-card reveal">
+          <div class="overview-icon" style="background: rgba(12, 74, 96, 0.1); color: var(--primary); margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-building-user"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">For Land Buyers</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Strategic site selection and verified deal closing for corporate buyers and investors.</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle-check"></i> Access to exclusive off-market land deals</li>
+            <li><i class="fa-solid fa-circle-check"></i> Complete due diligence & title verification</li>
+            <li><i class="fa-solid fa-circle-check"></i> Guided site visits & infrastructure assessment</li>
+            <li><i class="fa-solid fa-circle-check"></i> Government incentive guidance</li>
+          </ul>
+          <button class="btn btn-outline" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Find Land Opportunities</button>
+        </div>
+
+        <div class="service-card seller-card reveal">
+          <div class="overview-icon" style="background: rgba(214, 158, 78, 0.1); color: var(--accent-gold-dark); margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">For Land Sellers</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Unlock the true market value of your land parcels with our direct investor network.</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle-check"></i> Accurate land valuation & price assessment</li>
+            <li><i class="fa-solid fa-circle-check"></i> Direct access to verified corporate buyers</li>
+            <li><i class="fa-solid fa-circle-check"></i> Transparent negotiation facilitation</li>
+            <li><i class="fa-solid fa-circle-check"></i> Hassle-free legal documentation</li>
+          </ul>
+          <button class="btn btn-secondary" onclick="openModal('sell')" style="width: 100%; margin-top: auto;">List Your Property</button>
+        </div>
+
+        <div class="service-card legal-card reveal">
+          <div class="overview-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald-dark); margin-bottom: 1.5rem;">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Legal & Compliance</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;">Navigating complex Gujarat revenue regulations, NA conversions, and zoning clearance.</p>
+          <ul class="service-list">
+            <li><i class="fa-solid fa-circle-check"></i> NA (Non-Agricultural) conversion assistance</li>
+            <li><i class="fa-solid fa-circle-check"></i> Revenue record validation (7/12 & 8-A extracts)</li>
+            <li><i class="fa-solid fa-circle-check"></i> Environmental & port zone clearance guidance</li>
+            <li><i class="fa-solid fa-circle-check"></i> Deed drafting & registry execution</li>
+          </ul>
+          <button class="btn btn-outline" onclick="openModal('buy')" style="width: 100%; margin-top: auto; border-color: var(--accent-emerald); color: var(--accent-emerald-dark);">Request Consultation</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proven 5-Step Process Section -->
+  <section class="section" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold">Structured Roadmap</span>
+        <h2 class="section-title" data-i18n="process_title">Our Proven 5-Step Process</h2>
+        <p class="section-subtitle">How we ensure smooth, transparent, and legally secure land transactions from start to finish.</p>
+      </div>
+
+      <div class="process-roadmap reveal" id="processSection">
+        <div class="process-line"><div class="process-line-fill" id="processLineFill"></div></div>
+        
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Land Scouting</h3>
+            <p class="step-desc">Identifying prime land based on client specifications.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Detail Sharing</h3>
+            <p class="step-desc">Sharing 7/12 extracts, title search & site maps.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Site Visit</h3>
+            <p class="step-desc">Coordinating physical inspections & surveys.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Negotiation</h3>
+            <p class="step-desc">Facilitating fair pricing & agreement terms.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">5</div>
+            <h3 class="step-title">Registry</h3>
+            <p class="step-desc">Final deed execution & possession hand-over.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust & Stats Banner -->
+  <section class="stats-banner" id="statsBanner">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number" data-target="10" data-suffix="+">0</div>
+          <div class="stat-label">Years of Local Expertise</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="stat-label">Acres Successfully Transacted</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="100" data-suffix="+">0</div>
+          <div class="stat-label">Satisfied Corporate Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="99" data-suffix="%">0</div>
+          <div class="stat-label">Legal Due Diligence Accuracy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion Section -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Got Questions?</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Everything you need to know about buying or selling commercial land in Kutch.</p>
+      </div>
+
+      <div class="faq-grid reveal">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>What is NA land in Gujarat and why is it important for industrial projects?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>NA stands for Non-Agricultural land. In Gujarat, agricultural land cannot be used for commercial or industrial purposes without obtaining NA permission from the Collectorate. Buying pre-approved NA land saves significant time and legal paperwork.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Why is Kutch considered a top investment hub for commercial logistics?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Kutch houses India's premier deep-water ports (Kandla and Mundra), direct rail links, national highways, and the world's largest hybrid renewable energy park in Khavda, making it an unprecedented strategic corridor for logistics and manufacturing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How do you assist with due diligence and title verification?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>Our legal team scrutinizes 30-year revenue search reports, 7/12 extracts, encumbrance certificates, zoning compliance, and boundary maps to ensure 100% clean title transfer before any transaction takes place.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What sizes of land plots are available through your consultancy?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>We handle land parcels ranging from small GIDC plots (5,000 sq meters) up to massive industrial land banks exceeding 200+ acres suitable for mega solar parks and logistics parks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Dual-Lead Funnel Modal -->
+  <div class="modal-overlay" id="leadModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <button class="modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        <h2 id="modalTitle" style="color: white; font-size: 1.5rem;">Looking to Buy Land in Kutch?</h2>
+        <p id="modalSub" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 0.25rem;">Access verified GIDC, NA, and Port-adjacent commercial plots.</p>
+        
+        <div class="modal-tabs">
+          <button class="modal-tab active" id="buyTab"><i class="fa-solid fa-cart-shopping"></i> I Want to Buy Land</button>
+          <button class="modal-tab" id="sellTab"><i class="fa-solid fa-tag"></i> I Want to Sell Land</button>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <form id="buyerForm" class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Preferred Location</label>
+            <select class="form-select" required>
+              <option value="">Select Location</option>
+              <option value="kandla">Kandla Port Zone</option>
+              <option value="mundra">Mundra SEZ & Port</option>
+              <option value="gandhidham">Gandhidham City / GIDC</option>
+              <option value="khavda">Khavda Solar Corridor</option>
+              <option value="anjar">Anjar / Adipur</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Land Type Required</label>
+            <select class="form-select" required>
+              <option value="">Select Land Category</option>
+              <option value="gidc">GIDC Industrial Plot</option>
+              <option value="na">NA Commercial Land</option>
+              <option value="port">Port Logistics Parcel</option>
+              <option value="agri">Agricultural / Conversion</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Required Area (Acres / Sq. M)</label>
+            <input type="text" class="form-input" placeholder="e.g. 5 Acres or 10,000 Sq. M" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Budget Range (₹)</label>
+            <input type="text" class="form-input" placeholder="e.g. 50 Lakhs - 2 Crores" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Your Name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-paper-plane fa-solid"></i> Submit Buying Inquiry
+            </button>
+          </div>
+        </form>
+
+        <form id="sellerForm" class="form-grid" style="display: none;">
+          <div class="form-group">
+            <label class="form-label">Property Location</label>
+            <input type="text" class="form-input" placeholder="e.g. Near Kandla Port, Gandhidham" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Total Land Area</label>
+            <input type="text" class="form-input" placeholder="e.g. 12 Acres" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Title Clearance Status</label>
+            <select class="form-select" required>
+              <option value="clear">Title Clear (7/12 in hand)</option>
+              <option value="na">NA Approved Land</option>
+              <option value="process">Conversion in Process</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Expected Price / Rate</label>
+            <input type="text" class="form-input" placeholder="e.g. ₹ 15 Lakhs per Acre" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Owner / Representative Name</label>
+            <input type="text" class="form-input" placeholder="Your Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Contact Phone</label>
+            <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-secondary" style="width: 100%;">
+              <i class="fa-solid fa-list-check"></i> Request Property Listing & Valuation
+            </button>
+          </div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="form-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 style="font-size: 1.75rem; margin-bottom: 0.5rem; color: var(--primary-dark);">Inquiry Received!</h3>
+          <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem;">Thank you for reaching out. Our lead land consultant will analyze your details and contact you within 24 hours.</p>
+          <button class="btn btn-outline" onclick="closeModal()">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" style="color: white;">
+            <div class="logo-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+            <div class="logo-text" style="color: white;">LandIn<span style="color: var(--accent-gold);">Kutch</span></div>
+          </a>
+          <p>The premier land brokerage and property consultancy firm in Kutch, Gujarat. Facilitating seamless transactions between serious buyers and property owners across Kandla, Mundra, Bhuj and Gandhidham.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Target Sectors</h4>
+          <ul class="footer-links">
+            <li><a href="/gidc-estates">GIDC Industrial Plots</a></li>
+            <li><a href="/mundra-sez">Mundra Port Logistics</a></li>
+            <li><a href="/kandla-port">Kandla Maritime Zone</a></li>
+            <li><a href="/khavda-solar">Khavda Solar Energy Park</a></li>
+            <li><a href="/dholavira-tourism">Dholavira Tourism Plots</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/overview">Overview</a></li>
+            <li><a href="/services">Consultancy Services</a></li>
+            <li><a href="/process">5-Step Roadmap</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact Office</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> Commercial Complex, Gandhidham, Kutch, Gujarat 370201</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> +91 70162 70941</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> landinkutch@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 LandInKutch Consultant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
