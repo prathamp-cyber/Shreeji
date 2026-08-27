@@ -306,6 +306,14 @@ document.addEventListener('DOMContentLoaded', () => {
       gandhidham_desc: 'Click to view the official Gandhidham Master Plan PDF with Tagore Road, Sector layouts, and commercial market zones.',
       adipur_desc: 'Click to view the official Adipur Master Plan PDF with Station Road commercial plot grid and retail market maps.',
       open_pdf_btn: 'Open Master Plan PDF ↗',
+      listings_tag: 'Verified Opportunities',
+      listings_title: 'Available Land & Property Listings',
+      listings_subtitle: 'Real-time verified commercial shops, offices, and plots in Gandhidham & Adipur.',
+      citymaps_tag: 'City Planning & Sector Maps',
+      citymaps_title: 'Gandhidham & Adipur Commercial Maps (PDF)',
+      citymaps_subtitle: 'Download and view official town planning maps, sector layouts, and commercial market zones.',
+      gandhidham_map_title: 'Gandhidham Commercial Master Map',
+      adipur_map_title: 'Adipur Commercial Market Map',
       services_tag: 'Commercial Solutions',
       services_title: 'Our Commercial Real Estate Services',
       services_subtitle: 'Tailored services designed for commercial space tenants, property owners, and business investors in Gandhidham & Adipur.',
@@ -356,6 +364,14 @@ document.addEventListener('DOMContentLoaded', () => {
       gandhidham_desc: 'ટાગોર રોડ, સેક્ટર લેઆઉટ અને વ્યાપારી વિસ્તારો સાથે સત્તાવાર ગાંધીધામ માસ્ટર પ્લાન પીડીએફ જોવા માટે ક્લિક કરો.',
       adipur_desc: 'સ્ટેશન રોડ કોમર્શિયલ પ્લોટ ગ્રીડ અને માર્કેટ નકશા સાથે સત્તાવાર આદિપુર પીડીએફ જોવા માટે ક્લિક કરો.',
       open_pdf_btn: 'માસ્ટર પ્લાન પીડીએફ ખોલો ↗',
+      listings_tag: 'ચકાસાયેલ તકો',
+      listings_title: 'ઉપલબ્ધ ભાડાની પ્રોપર્ટી યાદીઓ',
+      listings_subtitle: 'ગાંધીધામ અને આદિપુરમાં ઉપલબ્ધ ચકાસાયેલ દુકાનો, ઓફિસો અને પ્લોટ.',
+      citymaps_tag: 'સિટી પ્લાનિંગ અને સેક્ટર નકશા',
+      citymaps_title: 'ગાંધીધામ અને આદિપુર કોમર્શિયલ નકશા (PDF)',
+      citymaps_subtitle: 'સત્તાવાર નગર યોજના નકશા, સેક્ટર લેઆઉટ અને વ્યાપારી વિસ્તારો ડાઉનલોડ કરો.',
+      gandhidham_map_title: 'ગાંધીધામ કોમર્શિયલ માસ્ટર મેપ',
+      adipur_map_title: 'આદિપુર કોમર્શિયલ માર્કેટ મેપ',
       services_tag: 'કોમર્શિયલ સોલ્યુશન્સ',
       services_title: 'અમારી કોમર્શિયલ રિયલ એસ્ટેટ સેવાઓ',
       services_subtitle: 'ગાંધીધામ અને આદિપુરમાં વ્યાપારી ભાડૂઆતો, માલિકો અને રોકાણકારો માટે વિશિષ્ટ સેવાઓ.',
@@ -406,6 +422,14 @@ document.addEventListener('DOMContentLoaded', () => {
       gandhidham_desc: 'टैगोर रोड, सेक्टर लेआउट और कमर्शियल मार्केट जोन के साथ आधिकारिक गांधीधाम मास्टर प्लान पीडीएफ देखें।',
       adipur_desc: 'स्टेशन रोड कमर्शियल प्लॉट ग्रिड और मार्केट मैप के साथ आधिकारिक आदिपुर पीडीएफ देखें।',
       open_pdf_btn: 'मास्टर प्लान पीडीएफ खोलें ↗',
+      listings_tag: 'सत्यापित अवसर',
+      listings_title: 'उपलब्ध प्रॉपर्टी सूचियां',
+      listings_subtitle: 'गांधीधाम और आदिपुर में उपलब्ध सत्यापित कमर्शियल दुकानें, ऑफिस और प्लॉट।',
+      citymaps_tag: 'सिटी प्लानिंग और सेक्टर नक्शे',
+      citymaps_title: 'गांधीधाम और आदिपुर कमर्शियल नक्शे (PDF)',
+      citymaps_subtitle: 'आधिकारिक नगर योजना नक्शे, सेक्टर लेआउट और कमर्शियल क्षेत्र डाउनलोड करें।',
+      gandhidham_map_title: 'गांधीधाम कमर्शियल मास्टर मैप',
+      adipur_map_title: 'आदिपुर कमर्शियल मार्केट मैप',
       services_tag: 'कमर्शियल समाधान',
       services_title: 'हमारी कमर्शियल रियल एस्टेट सेवाएं',
       services_subtitle: 'गांधीधाम और आदिपुर में किरायेदारों, मालिकों और निवेशकों के लिए विशेष सेवाएं।',
@@ -551,29 +575,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   } else {
-    // Override main homepage details
-    const homeData = siteContent.home || defaultSiteContent.home;
-    const heroTitleEl = document.querySelector('.hero-title');
-    const heroSubEl = document.querySelector('.hero-subtitle');
-    if (heroTitleEl && homeData.heroTitle) {
-      heroTitleEl.innerHTML = homeData.heroTitle;
-    }
-    if (heroSubEl && homeData.heroSubtitle) {
-      heroSubEl.textContent = homeData.heroSubtitle;
-    }
+    // Only apply custom admin overrides if non-default custom content exists in localStorage
+    const hasCustomHomeData = localStorage.getItem('site_content') !== null;
+    if (hasCustomHomeData) {
+      const homeData = siteContent.home || defaultSiteContent.home;
+      const heroTitleEl = document.querySelector('.hero-title');
+      const heroSubEl = document.querySelector('.hero-subtitle');
+      if (heroTitleEl && homeData.heroTitle) {
+        heroTitleEl.innerHTML = homeData.heroTitle;
+      }
+      if (heroSubEl && homeData.heroSubtitle) {
+        heroSubEl.textContent = homeData.heroSubtitle;
+      }
 
-    // Apply Our Story overrides
-    const storyHeadlineEl = document.getElementById('storyHeadlineDisplay');
-    const storyParagraphEl = document.getElementById('storyParagraphDisplay');
-    const storyYearsEl = document.getElementById('storyYearsDisplay');
-    const storyAcresEl = document.getElementById('storyAcresDisplay');
-
-    if (storyHeadlineEl && homeData.storyHeadline) storyHeadlineEl.textContent = homeData.storyHeadline;
-    if (storyParagraphEl && homeData.storyParagraph) storyParagraphEl.textContent = homeData.storyParagraph;
-    if (storyYearsEl && homeData.statYears) storyYearsEl.textContent = homeData.statYears;
-    if (storyAcresEl && homeData.statAcres) storyAcresEl.textContent = homeData.statAcres;
+      const storyHeadlineEl = document.getElementById('storyHeadlineDisplay');
+      const storyParagraphEl = document.getElementById('storyParagraphDisplay');
+      if (storyHeadlineEl && homeData.storyHeadline) storyHeadlineEl.textContent = homeData.storyHeadline;
+      if (storyParagraphEl && homeData.storyParagraph) storyParagraphEl.textContent = homeData.storyParagraph;
+    }
 
     // Apply Stats banner dynamic numbers
+    const homeData = siteContent.home || defaultSiteContent.home;
     const statNumbers = document.querySelectorAll('.stat-number');
     if (statNumbers && statNumbers.length >= 3) {
       if (homeData.statYears) {
@@ -686,4 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   }
+
+  // Ensure current language is applied after all dynamic rendering
+  applyLanguage(savedLang);
 });
