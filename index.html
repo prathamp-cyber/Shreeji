@@ -39,29 +39,30 @@
         </a>
         
         <ul class="nav-links" id="navLinks">
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/overview" class="nav-link">Overview</a></li>
+          <li><a href="/" class="nav-link"><span data-i18n="nav_home">Home</span></a></li>
+          <li><a href="/overview" class="nav-link"><span data-i18n="nav_overview">Overview</span></a></li>
           <li class="dropdown">
             <div class="dropdown-toggle nav-link">
-              Target Areas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
+              <span data-i18n="nav_target_areas">Target Areas</span> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
             </div>
             <div class="dropdown-menu">
               <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Gandhidham</a>
               <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Adipur</a>
             </div>
           </li>
-          <li><a href="/services" class="nav-link">Services</a></li>
-          <li><a href="/process" class="nav-link">Process</a></li>
-          <li><a href="/faq" class="nav-link">FAQ</a></li>
+          <li><a href="/services" class="nav-link"><span data-i18n="nav_services">Services</span></a></li>
+          <li><a href="/process" class="nav-link"><span data-i18n="nav_process">Process</span></a></li>
+          <li><a href="/faq" class="nav-link"><span data-i18n="nav_faq">FAQ</span></a></li>
         </ul>
 
         <div class="nav-actions">
           <div class="lang-switch">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="guj">ગુજ</button>
+            <button class="lang-btn" data-lang="hi">हिन्दी</button>
           </div>
           <button class="btn btn-primary" onclick="openModal('buy')" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
-            Contact Us
+            <span data-i18n="nav_contact">Contact Us</span>
           </button>
         </div>
 
@@ -104,22 +105,22 @@
           <div class="trust-item">
             <div class="trust-icon"><i class="fa-solid fa-briefcase"></i></div>
             <div class="trust-text">
-              <h4>10+ Years</h4>
-              <p>Commercial Experience</p>
+              <h4 data-i18n="stat_exp_val">10+ Years</h4>
+              <p data-i18n="stat_exp_lbl">Commercial Experience</p>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><i class="fa-solid fa-store"></i></div>
             <div class="trust-text">
-              <h4>250+ Spaces</h4>
-              <p>Commercial Leased</p>
+              <h4 data-i18n="stat_leased_val">250+ Spaces</h4>
+              <p data-i18n="stat_leased_lbl">Commercial Leased</p>
             </div>
           </div>
           <div class="trust-item">
             <div class="trust-icon"><i class="fa-solid fa-users-check"></i></div>
             <div class="trust-text">
-              <h4>100+ Clients</h4>
-              <p>Satisfied Businesses</p>
+              <h4 data-i18n="stat_clients_val">100+ Clients</h4>
+              <p data-i18n="stat_clients_lbl">Satisfied Businesses</p>
             </div>
           </div>
         </div>
@@ -134,22 +135,22 @@
         <div class="overview-card">
           <div class="overview-icon"><i class="fa-solid fa-store"></i></div>
           <div>
-            <h3>Rental Shops & Showrooms</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">High-footfall retail spaces and market showrooms in Gandhidham & Adipur.</p>
+            <h3 data-i18n="overview_shops_title">Rental Shops & Showrooms</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="overview_shops_desc">High-footfall retail spaces and market showrooms in Gandhidham & Adipur.</p>
           </div>
         </div>
         <div class="overview-card">
           <div class="overview-icon"><i class="fa-solid fa-building"></i></div>
           <div>
-            <h3>Corporate Office Spaces</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">Furnished and bare-shell office suites in commercial business complexes.</p>
+            <h3 data-i18n="overview_offices_title">Corporate Office Spaces</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="overview_offices_desc">Furnished and bare-shell office suites in commercial business complexes.</p>
           </div>
         </div>
         <div class="overview-card">
           <div class="overview-icon"><i class="fa-solid fa-file-contract"></i></div>
           <div>
-            <h3>Verified Lease & Title</h3>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">100% legally clear lease agreements, revenue validation, and hassle-free documentation.</p>
+            <h3 data-i18n="overview_legal_title">Verified Lease & Title</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted);" data-i18n="overview_legal_desc">100% legally clear lease agreements, revenue validation, and hassle-free documentation.</p>
           </div>
         </div>
       </div>
@@ -161,24 +162,24 @@
     <div class="container">
       <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center;">
         <div class="reveal">
-          <span class="section-tag emerald" style="margin-bottom: 1rem;">Who We Are</span>
-          <h2 class="section-title" id="storyHeadlineDisplay" style="text-align: left; margin-bottom: 1.5rem;">Shreeji Real Estate Consultancy</h2>
-          <p id="storyParagraphDisplay" style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+          <span class="section-tag emerald" style="margin-bottom: 1rem;" data-i18n="story_tag">Who We Are</span>
+          <h2 class="section-title" id="storyHeadlineDisplay" style="text-align: left; margin-bottom: 1.5rem;" data-i18n="story_headline">Shreeji Real Estate Consultancy</h2>
+          <p id="storyParagraphDisplay" style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;" data-i18n="story_paragraph">
             Shreeji Real Estate is your dedicated commercial property & rental consultancy headquartered in Gandhidham, Kutch, Gujarat. With 10+ years of local market leadership, we connect business owners, retail brands, and corporate tenants with top commercial rental spaces, offices, and plots in Gandhidham and Adipur.
           </p>
           <div class="hero-trust-row" style="margin-top: 2rem;">
             <div class="trust-item">
               <div class="trust-icon" style="color: var(--accent-emerald-dark);"><i class="fa-solid fa-briefcase"></i></div>
               <div class="trust-text">
-                <h4 id="storyYearsDisplay">10+ Years</h4>
-                <p>Local Commercial Expertise</p>
+                <h4 id="storyYearsDisplay" data-i18n="stat_exp_val">10+ Years</h4>
+                <p data-i18n="stat_exp_lbl">Local Commercial Expertise</p>
               </div>
             </div>
             <div class="trust-item">
               <div class="trust-icon" style="color: var(--accent-emerald-dark);"><i class="fa-solid fa-store"></i></div>
               <div class="trust-text">
-                <h4 id="storyAcresDisplay">250+ Spaces</h4>
-                <p>Properties Leased</p>
+                <h4 id="storyAcresDisplay" data-i18n="stat_leased_val">250+ Spaces</h4>
+                <p data-i18n="stat_leased_lbl">Properties Leased</p>
               </div>
             </div>
           </div>
@@ -195,9 +196,9 @@
   <section class="section" id="industries">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag gold">Target Areas & Property Maps</span>
-        <h2 class="section-title" data-i18n="industries_title">Gandhidham & Adipur Sector Maps</h2>
-        <p class="section-subtitle">Click below to open and view the official Master Plan PDF for Gandhidham and Adipur.</p>
+        <span class="section-tag gold" data-i18n="areas_tag">Target Areas & Property Maps</span>
+        <h2 class="section-title" data-i18n="areas_title">Gandhidham & Adipur Sector Maps</h2>
+        <p class="section-subtitle" data-i18n="areas_desc">Click below to open and view the official Master Plan PDF for Gandhidham and Adipur.</p>
       </div>
 
       <div class="industries-grid">
@@ -205,11 +206,11 @@
           <div>
             <div class="industry-icon-box"><i class="fa-solid fa-building"></i></div>
             <h3 class="industry-title">Gandhidham <i class="fa-solid fa-file-pdf" style="font-size: 1rem; margin-left: 0.5rem; color: #EF4444;"></i></h3>
-            <p class="industry-desc">Click to view the official Gandhidham Master Plan PDF with Tagore Road, Sector layouts, and commercial market zones.</p>
+            <p class="industry-desc" data-i18n="gandhidham_desc">Click to view the official Gandhidham Master Plan PDF with Tagore Road, Sector layouts, and commercial market zones.</p>
           </div>
           <div class="industry-tags">
             <span class="tag">Gandhidham</span>
-            <span class="tag" style="background: var(--primary); color: white;">Open Master Plan PDF ↗</span>
+            <span class="tag" style="background: var(--primary); color: white;" data-i18n="open_pdf_btn">Open Master Plan PDF ↗</span>
           </div>
         </a>
 
@@ -217,11 +218,11 @@
           <div>
             <div class="industry-icon-box"><i class="fa-solid fa-store"></i></div>
             <h3 class="industry-title">Adipur <i class="fa-solid fa-file-pdf" style="font-size: 1rem; margin-left: 0.5rem; color: #EF4444;"></i></h3>
-            <p class="industry-desc">Click to view the official Adipur Master Plan PDF with Station Road commercial plot grid and retail market maps.</p>
+            <p class="industry-desc" data-i18n="adipur_desc">Click to view the official Adipur Master Plan PDF with Station Road commercial plot grid and retail market maps.</p>
           </div>
           <div class="industry-tags">
             <span class="tag">Adipur</span>
-            <span class="tag" style="background: var(--accent-emerald-dark); color: white;">Open Master Plan PDF ↗</span>
+            <span class="tag" style="background: var(--accent-emerald-dark); color: white;" data-i18n="open_pdf_btn">Open Master Plan PDF ↗</span>
           </div>
         </a>
       </div>
@@ -246,24 +247,24 @@
   <section class="section" id="cityMaps" style="background: var(--primary-dark); color: white;">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag gold" style="background: rgba(214,158,78,0.2); color: var(--accent-gold-light); border-color: rgba(214,158,78,0.3);">City Planning & Sector Maps</span>
-        <h2 class="section-title" style="color: white;">Gandhidham & Adipur Commercial Maps (PDF)</h2>
-        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">Download and view official town planning maps, sector layouts, and commercial market zones.</p>
+        <span class="section-tag gold" style="background: rgba(214,158,78,0.2); color: var(--accent-gold-light); border-color: rgba(214,158,78,0.3);" data-i18n="areas_tag">City Planning & Sector Maps</span>
+        <h2 class="section-title" style="color: white;" data-i18n="areas_title">Gandhidham & Adipur Commercial Maps (PDF)</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.8);" data-i18n="areas_desc">Download and view official town planning maps, sector layouts, and commercial market zones.</p>
       </div>
 
       <div class="services-grid" id="cityMapsGrid">
         <div class="service-card reveal active" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: white;">
           <div style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1rem;"><i class="fa-solid fa-map-location-dot"></i></div>
           <h3 style="color: white; font-size: 1.4rem; margin-bottom: 0.5rem;">Gandhidham Commercial Master Map</h3>
-          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem;">Detailed sector boundaries, Tagor Road commercial hubs, and retail market map PDF.</p>
-          <a href="/gandhidham" class="btn btn-secondary" style="width: 100%; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> View Gandhidham Map PDF</a>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem;" data-i18n="gandhidham_desc">Detailed sector boundaries, Tagor Road commercial hubs, and retail market map PDF.</p>
+          <a href="/MASTER-PLAN.pdf" target="_blank" class="btn btn-secondary" style="width: 100%; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> <span data-i18n="open_pdf_btn">View Gandhidham Map PDF</span></a>
         </div>
 
         <div class="service-card reveal active" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: white;">
           <div style="font-size: 2.5rem; color: var(--accent-emerald); margin-bottom: 1rem;"><i class="fa-solid fa-map-pin"></i></div>
           <h3 style="color: white; font-size: 1.4rem; margin-bottom: 0.5rem;">Adipur Commercial Market Map</h3>
-          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem;">Adipur station market layout, commercial plot grid, and business sector map PDF.</p>
-          <a href="/adipur" class="btn btn-primary" style="width: 100%; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> View Adipur Map PDF</a>
+          <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem;" data-i18n="adipur_desc">Adipur station market layout, commercial plot grid, and business sector map PDF.</p>
+          <a href="/MASTER-PLAN.pdf" target="_blank" class="btn btn-primary" style="width: 100%; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> <span data-i18n="open_pdf_btn">View Adipur Map PDF</span></a>
         </div>
       </div>
     </div>
@@ -273,9 +274,9 @@
   <section class="section" id="services" style="background: var(--bg-white);">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag emerald">Commercial Solutions</span>
-        <h2 class="section-title">Our Commercial Real Estate Services</h2>
-        <p class="section-subtitle">Tailored services designed for commercial space tenants, property owners, and business investors in Gandhidham & Adipur.</p>
+        <span class="section-tag emerald" data-i18n="services_tag">Commercial Solutions</span>
+        <h2 class="section-title" data-i18n="services_title">Our Commercial Real Estate Services</h2>
+        <p class="section-subtitle" data-i18n="services_subtitle">Tailored services designed for commercial space tenants, property owners, and business investors in Gandhidham & Adipur.</p>
       </div>
 
       <div class="services-grid">
@@ -283,38 +284,38 @@
           <div class="overview-icon" style="background: rgba(12, 74, 96, 0.1); color: var(--primary); margin-bottom: 1.5rem;">
             <i class="fa-solid fa-building-user"></i>
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">For Commercial Tenants</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Finding high-performing retail shops, office suites, and commercial spaces on rent.</p>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;" data-i18n="tenant_title">For Commercial Tenants</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="tenant_desc">Finding high-performing retail shops, office suites, and commercial spaces on rent.</p>
           <ul class="service-list">
             <li><i class="fa-solid fa-circle-check"></i> Prime market location scouting</li>
             <li><i class="fa-solid fa-circle-check"></i> Lease terms & rent negotiation</li>
             <li><i class="fa-solid fa-circle-check"></i> Guided site inspections & footfall analysis</li>
             <li><i class="fa-solid fa-circle-check"></i> Turnkey move-in support</li>
           </ul>
-          <button class="btn btn-outline" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Find Commercial Rental</button>
+          <button class="btn btn-outline" onclick="openModal('buy')" style="width: 100%; margin-top: auto;"><span data-i18n="buy_btn">Find Commercial Rental</span></button>
         </div>
 
         <div class="service-card seller-card reveal">
           <div class="overview-icon" style="background: rgba(214, 158, 78, 0.1); color: var(--accent-gold-dark); margin-bottom: 1.5rem;">
             <i class="fa-solid fa-key"></i>
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">For Commercial Landlords</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Rent out your commercial shops, offices, or plots to corporate tenants with high rental yields.</p>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;" data-i18n="landlord_title">For Commercial Landlords</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="landlord_desc">Rent out your commercial shops, offices, or plots to corporate tenants with high rental yields.</p>
           <ul class="service-list">
             <li><i class="fa-solid fa-circle-check"></i> Rental valuation & market rate analysis</li>
             <li><i class="fa-solid fa-circle-check"></i> Verified corporate & retail tenant matching</li>
             <li><i class="fa-solid fa-circle-check"></i> Long-term lease agreement drafting</li>
             <li><i class="fa-solid fa-circle-check"></i> Security deposit & rent management</li>
           </ul>
-          <button class="btn btn-secondary" onclick="openModal('sell')" style="width: 100%; margin-top: auto;">List Commercial Property</button>
+          <button class="btn btn-secondary" onclick="openModal('sell')" style="width: 100%; margin-top: auto;"><span data-i18n="sell_btn">List Commercial Property</span></button>
         </div>
 
         <div class="service-card legal-card reveal">
           <div class="overview-icon" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald-dark); margin-bottom: 1.5rem;">
             <i class="fa-solid fa-scale-balanced"></i>
           </div>
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Lease & Legal Compliance</h3>
-          <p style="color: var(--text-muted); font-size: 0.95rem;">Navigating commercial municipal registrations, 11-month lease deeds, and property verification.</p>
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;" data-i18n="legal_title">Lease & Legal Compliance</h3>
+          <p style="color: var(--text-muted); font-size: 0.95rem;" data-i18n="legal_desc">Navigating commercial municipal registrations, 11-month lease deeds, and property verification.</p>
           <ul class="service-list">
             <li><i class="fa-solid fa-circle-check"></i> Registered Lease Deed preparation</li>
             <li><i class="fa-solid fa-circle-check"></i> Commercial tax & municipal clearance</li>

@@ -268,43 +268,190 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 9. Language Switcher (EN vs GUJ)
+  // 9. Language Switcher (EN, GUJ, HI)
   const langBtns = document.querySelectorAll('.lang-btn');
-  const i18nElements = document.querySelectorAll('[data-i18n]');
 
   const dictionary = {
     en: {
+      nav_home: 'Home',
+      nav_overview: 'Overview',
+      nav_target_areas: 'Target Areas',
+      nav_services: 'Services',
+      nav_process: 'Process',
+      nav_faq: 'FAQ',
+      nav_contact: 'Contact Us',
+      hero_badge: '<i class="fa-solid fa-building"></i> Premier Commercial Rental & Property Leasing',
       hero_title: 'Your Premier Partner for <span>Rental Commercial Properties</span> in Gandhidham & Adipur',
-      hero_sub: 'Expert guidance for renting, leasing, buying, and listing commercial shops, corporate offices, showrooms, and commercial plots.',
-      buy_btn: 'Looking for Rental Commercial Space?',
-      sell_btn: 'Rent Out / List Your Property',
-      industries_title: 'Gandhidham & Adipur Commercial Categories',
-      process_title: 'Our Proven 5-Step Leasing & Buying Process'
+      hero_sub: 'Expert guidance for renting, leasing, buying, and listing commercial shops, corporate offices, showrooms, and commercial plots across Gandhidham & Adipur, Gujarat.',
+      buy_btn: '<i class="fa-solid fa-magnifying-glass-location"></i> Looking for Rental Commercial Space?',
+      sell_btn: '<i class="fa-solid fa-key"></i> Rent Out / List Your Property',
+      stat_exp_val: '10+ Years',
+      stat_exp_lbl: 'Commercial Experience',
+      stat_leased_val: '250+ Spaces',
+      stat_leased_lbl: 'Commercial Leased',
+      stat_clients_val: '100+ Clients',
+      stat_clients_lbl: 'Satisfied Businesses',
+      overview_shops_title: 'Rental Shops & Showrooms',
+      overview_shops_desc: 'High-footfall retail spaces and market showrooms in Gandhidham & Adipur.',
+      overview_offices_title: 'Corporate Office Spaces',
+      overview_offices_desc: 'Furnished and bare-shell office suites in commercial business complexes.',
+      overview_legal_title: 'Verified Lease & Title',
+      overview_legal_desc: '100% legally clear lease agreements, revenue validation, and hassle-free documentation.',
+      story_tag: 'Who We Are',
+      story_headline: 'Shreeji Real Estate Consultancy',
+      story_paragraph: 'Shreeji Real Estate is your dedicated commercial property & rental consultancy headquartered in Gandhidham, Kutch, Gujarat. With 10+ years of local market leadership, we connect business owners, retail brands, and corporate tenants with top commercial rental spaces, offices, and plots in Gandhidham and Adipur.',
+      areas_tag: 'Target Areas & Sector Maps',
+      areas_title: 'Gandhidham & Adipur Sector Maps',
+      areas_desc: 'Click below to open and view the official Master Plan PDF for Gandhidham and Adipur.',
+      gandhidham_desc: 'Click to view the official Gandhidham Master Plan PDF with Tagore Road, Sector layouts, and commercial market zones.',
+      adipur_desc: 'Click to view the official Adipur Master Plan PDF with Station Road commercial plot grid and retail market maps.',
+      open_pdf_btn: 'Open Master Plan PDF ↗',
+      services_tag: 'Commercial Solutions',
+      services_title: 'Our Commercial Real Estate Services',
+      services_subtitle: 'Tailored services designed for commercial space tenants, property owners, and business investors in Gandhidham & Adipur.',
+      tenant_title: 'For Commercial Tenants',
+      tenant_desc: 'Finding high-performing retail shops, office suites, and commercial spaces on rent.',
+      landlord_title: 'For Commercial Landlords',
+      landlord_desc: 'Rent out your commercial shops, offices, or plots to corporate tenants with high rental yields.',
+      legal_title: 'Lease & Legal Compliance',
+      legal_desc: 'Navigating commercial municipal registrations, 11-month lease deeds, and property verification.',
+      process_tag: 'Structured Execution',
+      process_title: 'Our 5-Step Leasing & Buying Process',
+      process_subtitle: 'A seamless journey from site selection to contract registration and move-in execution.',
+      faq_tag: 'Clarifications',
+      faq_title: 'Commercial Property FAQ',
+      faq_subtitle: 'Frequently asked questions regarding commercial renting, lease terms, and documentation in Gandhidham & Adipur.'
     },
     guj: {
-      hero_title: 'ગાંધીધામ અને આદિપુરમા <span>કોમર્શિયલ પ્રોપર્ટી ભાડે આપવા અને લેવા</span> માટે વિશ્વાસપાત્ર કન્સલ્ટન્ટ',
-      hero_sub: 'દુકાનો, કોર્પોરેટ ઓફિસ, શોરૂમ અને કોમર્શિયલ પ્લોટ ભાડે લેવા-આપવા માટે શ્રેષ્ઠ માર્ગદર્શન.',
-      buy_btn: 'કોમર્શિયલ જગ્યા ભાડે જોઈએ છે?',
-      sell_btn: 'પ્રોપર્ટી ભાડે આપવી છે?',
-      industries_title: 'મુખ્ય કોમર્શિયલ વિસ્તારો',
-      process_title: 'અમારી ૫-પગલાની પ્રક્રિયા'
+      nav_home: 'હોમ',
+      nav_overview: 'ઝાંખી',
+      nav_target_areas: 'લક્ષ્ય વિસ્તારો',
+      nav_services: 'સેવાઓ',
+      nav_process: 'પ્રક્રિયા',
+      nav_faq: 'પ્રશ્નોત્તરી',
+      nav_contact: 'સંપર્ક કરો',
+      hero_badge: '<i class="fa-solid fa-building"></i> પ્રીમિયર કોમર્શિયલ રેન્ટલ અને પ્રોપર્ટી લીઝિંગ',
+      hero_title: 'ગાંધીધામ અને આદિપુરમાં <span>કોમર્શિયલ પ્રોપર્ટી ભાડે આપવા અને લેવા</span> માટે વિશ્વાસપાત્ર પાર્ટનર',
+      hero_sub: 'ગાંધીધામ અને આદિપુરમાં તમામ કોમર્શિયલ દુકાનો, કોર્પોરેટ ઓફિસો, શોરૂમ અને કોમર્શિયલ પ્લોટ ભાડે લેવા-આપવા માટે નિષ્ણાત માર્ગદર્શન.',
+      buy_btn: '<i class="fa-solid fa-magnifying-glass-location"></i> કોમર્શિયલ જગ્યા ભાડે જોઈએ છે?',
+      sell_btn: '<i class="fa-solid fa-key"></i> તમારી પ્રોપર્ટી ભાડે મૂકો / યાદી કરો',
+      stat_exp_val: '૧૦+ વર્ષ',
+      stat_exp_lbl: 'કોમર્શિયલ અનુભવ',
+      stat_leased_val: '૨૫૦+ જગ્યાઓ',
+      stat_leased_lbl: 'લીઝ પર આપેલી પ્રોપર્ટી',
+      stat_clients_val: '૧૦૦+ ગ્રાહકો',
+      stat_clients_lbl: 'સંતુષ્ટ વ્યવસાયો',
+      overview_shops_title: 'ભાડાની દુકાનો અને શોરૂમ',
+      overview_shops_desc: 'ગાંધીધામ અને આદિપુરના મુખ્ય બજારોમાં વધુ ગ્રાહકો ધરાવતી જગ્યાઓ.',
+      overview_offices_title: 'કોર્પોરેટ ઓફિસ સ્પેસ',
+      overview_offices_desc: 'વ્યાપારી સંકુલમાં સુસજ્જ અને ખુલ્લી ઓફિસો.',
+      overview_legal_title: 'ચકાસાયેલ લીઝ અને દસ્તાવેજ',
+      overview_legal_desc: '૧૦૦% કાયદાકીય રીતે સ્પષ્ટ લીઝ કરાર અને સરળ દસ્તાવેજીકરણ.',
+      story_tag: 'અમારા વિશે',
+      story_headline: 'શ્રીજી રિયલ એસ્ટેટ કન્સલ્ટન્સી',
+      story_paragraph: 'શ્રીજી રિયલ એસ્ટેટ ગાંધીધામ, કચ્છમાં મુખ્ય મથક ધરાવતી તમારી સમર્પિત કોમર્શિયલ પ્રોપર્ટી અને રેન્ટલ કન્સલ્ટન્સી છે. ૧૦+ વર્ષથી વધુના સ્થાનિક અનુભવ સાથે, અમે વેપારીઓ, રિટેલ બ્રાન્ડ્સ અને કોર્પોરેટ ભાડૂઆતોને ગાંધીધામ અને આદિપુરમાં ઉત્કૃષ્ટ ભાડાની જગ્યાઓ પૂરી પાડીએ છીએ.',
+      areas_tag: 'લક્ષ્ય વિસ્તારો અને સેક્ટર નકશા',
+      areas_title: 'ગાંધીધામ અને આદિપુર સેક્ટર નકશા',
+      areas_desc: 'ગાંધીધામ અને આદિપુર માટે સત્તાવાર માસ્ટર પ્લાન પીડીએફ જોવા માટે નીચે ક્લિક કરો.',
+      gandhidham_desc: 'ટાગોર રોડ, સેક્ટર લેઆઉટ અને વ્યાપારી વિસ્તારો સાથે સત્તાવાર ગાંધીધામ માસ્ટર પ્લાન પીડીએફ જોવા માટે ક્લિક કરો.',
+      adipur_desc: 'સ્ટેશન રોડ કોમર્શિયલ પ્લોટ ગ્રીડ અને માર્કેટ નકશા સાથે સત્તાવાર આદિપુર પીડીએફ જોવા માટે ક્લિક કરો.',
+      open_pdf_btn: 'માસ્ટર પ્લાન પીડીએફ ખોલો ↗',
+      services_tag: 'કોમર્શિયલ સોલ્યુશન્સ',
+      services_title: 'અમારી કોમર્શિયલ રિયલ એસ્ટેટ સેવાઓ',
+      services_subtitle: 'ગાંધીધામ અને આદિપુરમાં વ્યાપારી ભાડૂઆતો, માલિકો અને રોકાણકારો માટે વિશિષ્ટ સેવાઓ.',
+      tenant_title: 'વ્યાપારી ભાડૂઆતો માટે',
+      tenant_desc: 'ભાડેથી ઉત્કૃષ્ટ રિટેલ દુકાનો, ઓફિસો અને જગ્યાઓ શોધવી.',
+      landlord_title: 'કોમર્શિયલ માલિકો માટે',
+      landlord_desc: 'તમારી દુકાનો, ઓફિસો અથવા પ્લોટ કોર્પોરેટ ભાડૂઆતોને ભાડે આપો.',
+      legal_title: 'લીઝ અને કાનૂની સલાહ',
+      legal_desc: '૧૧ મહિનાના લીઝ ડીડ્સ, મ્યુનિસિપલ રજીસ્ટ્રેશન અને મિલકત ચકાસણી.',
+      process_tag: 'સુવ્યવસ્થિત પ્રક્રિયા',
+      process_title: 'અમારી ૫-પગલાની લીઝિંગ પ્રક્રિયા',
+      process_subtitle: 'પ્લોટ પસંદગીથી કરાર નોંધણી અને મુવ-ઇન સુધીની સરળ સફર.',
+      faq_tag: 'સામાન્ય પ્રશ્નો',
+      faq_title: 'કોમર્શિયલ પ્રોપર્ટી પ્રશ્નોત્તરી',
+      faq_subtitle: 'ગાંધીધામ અને આદિપુરમાં ભાડાના કરાર અને દસ્તાવેજો અંગે વારંવાર પૂછાતા પ્રશ્નો.'
+    },
+    hi: {
+      nav_home: 'होम',
+      nav_overview: 'अवलोकन',
+      nav_target_areas: 'लक्षित क्षेत्र',
+      nav_services: 'सेवाएं',
+      nav_process: 'प्रक्रिया',
+      nav_faq: 'अक्सर पूछे जाने वाले सवाल',
+      nav_contact: 'संपर्क करें',
+      hero_badge: '<i class="fa-solid fa-building"></i> प्रमुख कमर्शियल रेंटल और लीजिंग कंसल्टेंसी',
+      hero_title: 'गांधीधाम और आदिपुर में <span>कमर्शियल प्रॉपर्टी किराए पर लेने व देने</span> हेतु आपका प्रमुख पार्टनर',
+      hero_sub: 'गांधीधाम और आदिपुर, गुजरात में कमर्शियल दुकानों, कॉर्पोरेट कार्यालयों, शोरूम और कमर्शियल प्लॉटों को किराए पर लेने व देने के लिए विशेषज्ञ मार्गदर्शन।',
+      buy_btn: '<i class="fa-solid fa-magnifying-glass-location"></i> क्या आपको कमर्शियल स्थान किराए पर चाहिए?',
+      sell_btn: '<i class="fa-solid fa-key"></i> अपनी प्रॉपर्टी किराए पर दें / लिस्ट करें',
+      stat_exp_val: '10+ वर्ष',
+      stat_exp_lbl: 'कमर्शियल अनुभव',
+      stat_leased_val: '250+ स्थान',
+      stat_leased_lbl: 'लीज पर दी गई प्रॉपर्टी',
+      stat_clients_val: '100+ ग्राहक',
+      stat_clients_lbl: 'संतुष्ट व्यवसाय',
+      overview_shops_title: 'किराए की दुकानें और शोरूम',
+      overview_shops_desc: 'गांधीधाम और आदिपुर के प्रमुख बाजारों में उच्च फुटफॉल वाले रेंटल रिटेल स्थान।',
+      overview_offices_title: 'कॉर्पोरेट ऑफिस स्पेस',
+      overview_offices_desc: 'कमर्शियल कॉम्प्लेक्स में पूरी तरह से सुसज्जित और खुली ऑफिस जगहें।',
+      overview_legal_title: 'सत्यापित लीज और दस्तावेज',
+      overview_legal_desc: '100% कानूनी रूप से स्पष्ट लीज समझौते और परेशानी मुक्त दस्तावेजीकरण।',
+      story_tag: 'हमारे बारे में',
+      story_headline: 'श्रीजी रियल एस्टेट कंसल्टेंसी',
+      story_paragraph: 'श्रीजी रियल एस्टेट गांधीधाम, कच्छ में मुख्यालय वाली आपकी समर्पित कमर्शियल प्रॉपर्टी और रेंटल कंसल्टेंसी है। 10+ वर्षों के स्थानीय अनुभव के साथ, हम व्यापारियों, रिटेल ब्रांडों और कॉर्पोरेट किरायेदारों को गांधीधाम व आदिपुर में बेहतरीन किराए के स्थान प्रदान करते हैं।',
+      areas_tag: 'लक्षित क्षेत्र और नक्शे',
+      areas_title: 'गांधीधाम और आदिपुर सेक्टर नक्शे',
+      areas_desc: 'गांधीधाम और आदिपुर के लिए आधिकारिक मास्टर प्लान पीडीएफ देखने के लिए नीचे क्लिक करें।',
+      gandhidham_desc: 'टैगोर रोड, सेक्टर लेआउट और कमर्शियल मार्केट जोन के साथ आधिकारिक गांधीधाम मास्टर प्लान पीडीएफ देखें।',
+      adipur_desc: 'स्टेशन रोड कमर्शियल प्लॉट ग्रिड और मार्केट मैप के साथ आधिकारिक आदिपुर पीडीएफ देखें।',
+      open_pdf_btn: 'मास्टर प्लान पीडीएफ खोलें ↗',
+      services_tag: 'कमर्शियल समाधान',
+      services_title: 'हमारी कमर्शियल रियल एस्टेट सेवाएं',
+      services_subtitle: 'गांधीधाम और आदिपुर में किरायेदारों, मालिकों और निवेशकों के लिए विशेष सेवाएं।',
+      tenant_title: 'कमर्शियल किरायेदारों के लिए',
+      tenant_desc: 'किराए पर बेहतरीन रिटेल दुकानें, ऑफिस और कमर्शियल स्थान खोजना।',
+      landlord_title: 'कमर्शियल मालिकों के लिए',
+      landlord_desc: 'अपनी दुकानें, ऑफिस या प्लॉट कॉर्पोरेट किरायेदारों को किराए पर दें।',
+      legal_title: 'लीज और कानूनी अनुपालन',
+      legal_desc: '11 महीने के लीज डीड, नगर निगम पंजीकरण और संपत्ति सत्यापन।',
+      process_tag: 'व्यवस्थित प्रक्रिया',
+      process_title: 'हमारी 5-चरण लीजिंग प्रक्रिया',
+      process_subtitle: 'साइट चयन से लेकर अनुबंध पंजीकरण और कब्जे तक की आसान यात्रा।',
+      faq_tag: 'सामान्य प्रश्न',
+      faq_title: 'कमर्शियल प्रॉपर्टी प्रश्नोत्तरी',
+      faq_subtitle: 'गांधीधाम और आदिपुर में रेंटल एग्रीमेंट और दस्तावेजों के संबंध में अक्सर पूछे जाने वाले प्रश्न।'
     }
   };
+
+  function applyLanguage(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dictionary[lang] && dictionary[lang][key]) {
+        el.innerHTML = dictionary[lang][key];
+      }
+    });
+    localStorage.setItem('preferred_language', lang);
+  }
 
   langBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       langBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const lang = btn.getAttribute('data-lang');
-      
-      i18nElements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dictionary[lang] && dictionary[lang][key]) {
-          el.innerHTML = dictionary[lang][key];
-        }
-      });
+      applyLanguage(lang);
     });
   });
+
+  // Restore saved language preference on load
+  const savedLang = localStorage.getItem('preferred_language') || 'en';
+  const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+  if (targetBtn) {
+    langBtns.forEach(b => b.classList.remove('active'));
+    targetBtn.classList.add('active');
+    applyLanguage(savedLang);
+  }
 
   // 10. Admin Content Dynamic Loading & Rendering
   const defaultSiteContent = {
