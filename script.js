@@ -497,6 +497,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  const langBtns = document.querySelectorAll('.lang-btn');
+
+  function applyLanguage(lang) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dictionary[lang] && dictionary[lang][key]) {
+        el.innerHTML = dictionary[lang][key];
+      }
+    });
+    renderDynamicListings(lang);
+    localStorage.setItem('preferred_language', lang);
+  }
+
+  langBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      langBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const lang = btn.getAttribute('data-lang');
+      applyLanguage(lang);
+    });
+  });
+
+  const savedLang = localStorage.getItem('preferred_language') || 'en';
+  const targetBtn = document.querySelector(`.lang-btn[data-lang="${savedLang}"]`);
+  if (targetBtn) {
+    langBtns.forEach(b => b.classList.remove('active'));
+    targetBtn.classList.add('active');
+  }
+
   const siteContent = JSON.parse(localStorage.getItem('site_content')) || defaultSiteContent;
 
   // 11. Determine Current Page Key & Apply Overrides
