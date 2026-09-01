@@ -65,12 +65,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Active Nav Link Highlighting based on current pathname
   const currentPath = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
-  document.querySelectorAll('.nav-link, .dropdown-item').forEach(link => {
+  document.querySelectorAll('.nav-link[href], .dropdown-item[href]').forEach(link => {
     const href = link.getAttribute('href')?.toLowerCase().replace(/\/$/, '') || '/';
-    if (href === currentPath || (currentPath === '' && href === '/') || (href !== '/' && currentPath.includes(href))) {
+    if (href === currentPath || (currentPath === '' && href === '/') || (href !== '/' && currentPath !== '/' && currentPath.includes(href))) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');
+    }
+  });
+
+  // Highlight dropdown toggle only if a child dropdown-item is active
+  document.querySelectorAll('.dropdown').forEach(dropdown => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
+    const activeItem = dropdown.querySelector('.dropdown-item.active');
+    if (toggle) {
+      if (activeItem) {
+        toggle.classList.add('active');
+      } else {
+        toggle.classList.remove('active');
+      }
     }
   });
 
