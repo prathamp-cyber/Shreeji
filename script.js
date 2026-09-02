@@ -707,17 +707,20 @@ document.addEventListener('DOMContentLoaded', () => {
           vaultPdfContainer.appendChild(card);
         });
       }
+    }
+  }
+
   // FAQ Page Category Filter & Real-Time Search Handler
   const faqSearchInput = document.getElementById('faqSearchInput');
   const faqCategoryBtns = document.querySelectorAll('.faq-cat-btn');
-  const faqItems = document.querySelectorAll('.faq-item');
+  const faqPageItems = document.querySelectorAll('.faq-item');
 
   function filterFaqs() {
     const query = faqSearchInput ? faqSearchInput.value.toLowerCase().trim() : '';
     const activeCategoryBtn = document.querySelector('.faq-cat-btn.active');
     const category = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
 
-    faqItems.forEach(item => {
+    faqPageItems.forEach(item => {
       const itemCategory = item.getAttribute('data-category');
       const questionText = item.querySelector('.faq-question')?.textContent.toLowerCase() || '';
       const answerText = item.querySelector('.faq-answer')?.textContent.toLowerCase() || '';
