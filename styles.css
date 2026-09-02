@@ -1635,3 +1635,226 @@ float-top-right {
   }
 }
 
+/* ==========================================================================
+   Dedicated Navbar Page Component Styles
+   ========================================================================== */
+
+/* FAQ Page Controls */
+.faq-search-box {
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+  position: relative;
+}
+
+.faq-search-box i {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+.faq-search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3.25rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.faq-search-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(12, 74, 96, 0.15);
+}
+
+.faq-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.faq-cat-btn {
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-white);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.faq-cat-btn:hover, .faq-cat-btn.active {
+  background: var(--primary);
+  color: var(--bg-white);
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px rgba(12, 74, 96, 0.25);
+}
+
+/* Service Comparison Table */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  background: var(--bg-white);
+  border: 1px solid var(--border-color);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+  background: var(--primary);
+  color: var(--bg-white);
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) {
+  background: var(--bg-slate);
+}
+
+.table-check {
+  color: var(--accent-emerald);
+  font-size: 1.2rem;
+}
+
+/* Process Timeline & Checklist */
+.process-detailed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.process-card-detailed {
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: var(--transition-normal);
+}
+
+.process-card-detailed:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.process-step-badge {
+  position: absolute;
+  top: -15px;
+  left: 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--bg-white);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(12, 74, 96, 0.3);
+}
+
+.doc-checklist-card {
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-checklist-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.doc-checklist-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.doc-checklist-card li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.doc-checklist-card li i {
+  color: var(--accent-emerald);
+}
+
+/* Overview Market Cards */
+.corridor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.corridor-card {
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+}
+
+.corridor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-gold);
+}
+
+.corridor-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(214, 158, 78, 0.12);
+  color: var(--accent-gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+

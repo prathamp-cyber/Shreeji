@@ -9,20 +9,6 @@
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    (function() {
-      var perf = window.performance && window.performance.getEntriesByType ? window.performance.getEntriesByType("navigation")[0] : null;
-      var isReload = (perf && perf.type === "reload") || (window.performance && window.performance.navigation && window.performance.navigation.type === 1);
-      if (isReload) {
-        if (window.location.pathname !== '/' && window.location.pathname !== '/index.html' && window.location.pathname !== '') {
-          window.location.replace('/');
-        } else {
-          window.scrollTo(0, 0);
-          if (window.location.hash) {
-            history.replaceState(null, null, '/');
-          }
-        }
-      }
-    })();
   </script>
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

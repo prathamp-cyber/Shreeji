@@ -1,31 +1,6 @@
 /* ==========================================================================
-   LandInKutch Consultant - Interactive JavaScript & Reload Router
+   Shreeji Real Estate - Interactive JavaScript
    ========================================================================== */
-
-// Immediately redirect to Homepage on ANY browser refresh/reload
-(function() {
-  var perfEntries = performance.getEntriesByType("navigation");
-  var isReload = (perfEntries.length > 0 && perfEntries[0].type === "reload") || 
-                 (performance.navigation && performance.navigation.type === 1) ||
-                 sessionStorage.getItem("is_reloading") === "true";
-
-  sessionStorage.removeItem("is_reloading");
-
-  if (isReload) {
-    if (window.location.pathname !== '/' && window.location.pathname !== '') {
-      window.location.replace('/');
-    } else {
-      window.scrollTo(0, 0);
-      if (window.location.hash) {
-        history.replaceState(null, null, '/');
-      }
-    }
-  }
-})();
-
-window.addEventListener("beforeunload", function() {
-  sessionStorage.setItem("is_reloading", "true");
-});
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Sticky Header & Mobile Menu
@@ -732,7 +707,44 @@ document.addEventListener('DOMContentLoaded', () => {
           vaultPdfContainer.appendChild(card);
         });
       }
-    }
+  // FAQ Page Category Filter & Real-Time Search Handler
+  const faqSearchInput = document.getElementById('faqSearchInput');
+  const faqCategoryBtns = document.querySelectorAll('.faq-cat-btn');
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  function filterFaqs() {
+    const query = faqSearchInput ? faqSearchInput.value.toLowerCase().trim() : '';
+    const activeCategoryBtn = document.querySelector('.faq-cat-btn.active');
+    const category = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
+
+    faqItems.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      const questionText = item.querySelector('.faq-question')?.textContent.toLowerCase() || '';
+      const answerText = item.querySelector('.faq-answer')?.textContent.toLowerCase() || '';
+      
+      const matchesCategory = category === 'all' || itemCategory === category;
+      const matchesQuery = !query || questionText.includes(query) || answerText.includes(query);
+
+      if (matchesCategory && matchesQuery) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  if (faqSearchInput) {
+    faqSearchInput.addEventListener('input', filterFaqs);
+  }
+
+  if (faqCategoryBtns.length > 0) {
+    faqCategoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        faqCategoryBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterFaqs();
+      });
+    });
   }
 
   // Ensure current language is applied after all dynamic rendering
