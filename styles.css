@@ -1355,6 +1355,8 @@ float-top-right {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* Hero section elements should be immediately visible on page load */
+.hero .reveal,
 .reveal.active {
   opacity: 1;
   transform: translateY(0);

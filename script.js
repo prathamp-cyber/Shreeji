@@ -172,24 +172,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const formSuccess = document.getElementById('formSuccess');
   const closeModalBtn = document.getElementById('closeModalBtn');
 
-  window.openModal = function(type) {
+  function closeModal() {
+    if (!modalOverlay) return;
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  window.closeModal = closeModal;
+
+  function openModal(type) {
     if (!modalOverlay) return;
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
-    formSuccess.style.display = 'none';
+    if (formSuccess) formSuccess.style.display = 'none';
     
     if (type === 'sell') {
       switchTab('sell');
     } else {
       switchTab('buy');
     }
-  };
-
-  window.closeModal = function() {
-    if (!modalOverlay) return;
-    modalOverlay.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  };
+  }
+  window.openModal = openModal;
 
   if (closeModalBtn) {
     closeModalBtn.addEventListener('click', closeModal);
@@ -579,7 +581,56 @@ document.addEventListener('DOMContentLoaded', () => {
     targetBtn.classList.add('active');
   }
 
-  const siteContent = JSON.parse(localStorage.getItem('site_content')) || defaultSiteContent;
+  const defaultSiteContent = {
+    home: {
+      heroTitle: "Your Premier Partner for <span>Rental Commercial Properties</span> in Gandhidham & Adipur",
+      heroSubtitle: "Expert guidance for renting, leasing, buying, and listing commercial shops, corporate offices, showrooms, and commercial plots across Gandhidham & Adipur, Gujarat.",
+      contactPhone: "+91 70162 70941",
+      contactEmail: "shreejirealestate@gmail.com",
+      storyHeadline: "Shreeji Real Estate Consultancy",
+      storyParagraph: "Shreeji Real Estate is your dedicated commercial property & rental consultancy headquartered in Gandhidham, Kutch, Gujarat. With 10+ years of local market leadership, we connect business owners, retail brands, and corporate tenants with top commercial rental spaces, offices, and plots in Gandhidham and Adipur.",
+      statYears: "10+",
+      statAcres: "250+",
+      statClients: "100+"
+    },
+    gandhidham: {
+      heroBadge: "Commercial Hub",
+      heroTitle: "Rental Commercial Space in <span>Gandhidham Market</span>",
+      heroSubtitle: "Shops, showrooms, office space, and commercial plots available on rent/lease across Tagore Road, Sector 1-12, and Main Market.",
+      adv1Title: "Tagore Road Frontage",
+      adv1Desc: "High footfall retail shops & corporate offices on Gandhidham's central arterial business road.",
+      adv2Title: "Sector Market Locations",
+      adv2Desc: "Prime corner shops and commercial floors in Sector 1 to Sector 12 markets.",
+      adv3Title: "100% Lease Clearances",
+      adv3Desc: "Clean title 11-month lease deeds, clear revenue status, and commercial municipal clearance.",
+      adv4Title: "High Rental Yields",
+      adv4Desc: "Strong capital appreciation and high return on investment for commercial property owners."
+    },
+    adipur: {
+      heroBadge: "Retail & Residential Belt",
+      heroTitle: "Commercial Properties in <span>Adipur Retail Hub</span>",
+      heroSubtitle: "Prime retail market shops, showroom spaces, and office suites on Station Road and key commercial avenues in Adipur.",
+      adv1Title: "Station Road High Street",
+      adv1Desc: "High customer density market locations ideal for apparel, electronics, and retail branch offices.",
+      adv2Title: "Flexible Lease Terms",
+      adv2Desc: "Short-term 11-month agreements or long-term 5-year to 9-year corporate lease deeds.",
+      adv3Title: "Ready Move-In Units",
+      adv3Desc: "Bare-shell and furnished shops & offices ready for immediate business setup.",
+      adv4Title: "Transparent Brokerage",
+      adv4Desc: "Fair market valuations, clear fee structure, and end-to-end lease agreement support."
+    }
+  };
+
+  let siteContent = defaultSiteContent;
+  try {
+    const stored = localStorage.getItem('site_content');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      if (parsed) siteContent = parsed;
+    }
+  } catch (e) {
+    siteContent = defaultSiteContent;
+  }
 
   // 11. Determine Current Page Key & Apply Overrides
   const path = window.location.pathname.toLowerCase();
@@ -668,10 +719,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Apply contact details overrides
     const footerPhoneEl = document.querySelector('.footer-links i.fa-phone');
     const footerEmailEl = document.querySelector('.footer-links i.fa-envelope');
-    if (footerPhoneEl && homeData.contactPhone) {
+    if (footerPhoneEl && homeData.contactPhone && footerPhoneEl.parentElement) {
       footerPhoneEl.parentElement.innerHTML = `<i class="fa-solid fa-phone" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> ${homeData.contactPhone}`;
     }
-    if (footerEmailEl && homeData.contactEmail) {
+    if (footerEmailEl && homeData.contactEmail && footerEmailEl.parentElement) {
       footerEmailEl.parentElement.innerHTML = `<i class="fa-solid fa-envelope" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> ${homeData.contactEmail}`;
     }
   }
