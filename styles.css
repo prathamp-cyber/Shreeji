@@ -407,7 +407,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(135deg, rgba(11, 42, 66, 0.55) 0%, rgba(27, 79, 122, 0.35) 50%, rgba(46, 125, 209, 0.2) 100%), url('images/hero-bg.jpg');
+  background-image: linear-gradient(135deg, rgba(11, 42, 66, 0.55) 0%, rgba(27, 79, 122, 0.35) 50%, rgba(46, 125, 209, 0.2) 100%), url('images/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
