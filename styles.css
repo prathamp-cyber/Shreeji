@@ -407,29 +407,12 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  background: var(--primary-dark);
+  background-image: linear-gradient(135deg, rgba(11, 42, 66, 0.55) 0%, rgba(27, 79, 122, 0.35) 50%, rgba(46, 125, 209, 0.2) 100%), url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--bg-white);
   overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.35;
-  filter: saturate(1.2) contrast(1.1);
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 20% 50%, rgba(12, 74, 96, 0.9) 0%, rgba(7, 49, 64, 0.95) 70%);
 }
 
 .glow-orb {
@@ -459,7 +442,12 @@ img {
   position: relative;
   z-index: 10;
   max-width: 800px;
+  width: 100%;
+  text-align: left;
   padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .hero-badge {
@@ -578,10 +566,10 @@ img {
 
 /* Hero Grid & Right Side Visual Photo Showcase */
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
-  gap: 3.5rem;
+  text-align: left;
   width: 100%;
   position: relative;
   z-index: 10;
