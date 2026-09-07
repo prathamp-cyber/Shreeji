@@ -10,7 +10,7 @@
     :root {
       --admin-navy: #0A1128;
       --admin-navy-light: #1C2541;
-      --admin-blue-accent: #3A86C8;
+      --admin-blue-accent: #4FA0D8;
       --admin-bg: #F4F7FC;
       --admin-text-main: #1D2D44;
       --admin-text-muted: #64748B;
@@ -450,12 +450,12 @@
     }
 
     .inquiry-type.buy {
-      background: rgba(16, 185, 129, 0.1);
+      background: rgba(111, 195, 232, 0.15);
       color: var(--accent-emerald-dark);
     }
 
     .inquiry-type.sell {
-      background: rgba(214, 158, 78, 0.1);
+      background: rgba(217, 164, 65, 0.15);
       color: var(--accent-gold-dark);
     }
 
@@ -567,14 +567,14 @@
               <h3>Lead Inquiries</h3>
               <p id="dashTotalInquiries">0</p>
             </div>
-            <div class="metric-icon" style="background: rgba(16,185,129,0.1); color: var(--accent-emerald-dark);"><i class="fa-solid fa-envelope"></i></div>
+            <div class="metric-icon" style="background: rgba(111, 195, 232, 0.15); color: var(--accent-emerald-dark);"><i class="fa-solid fa-envelope"></i></div>
           </div>
           <div class="metric-card">
             <div class="metric-info">
               <h3>Active PDFs</h3>
               <p id="dashTotalPdfs">0</p>
             </div>
-            <div class="metric-icon" style="background: rgba(214,158,78,0.1); color: var(--accent-gold-dark);"><i class="fa-solid fa-file-pdf"></i></div>
+            <div class="metric-icon" style="background: rgba(217, 164, 65, 0.15); color: var(--accent-gold-dark);"><i class="fa-solid fa-file-pdf"></i></div>
           </div>
         </div>
 
@@ -623,7 +623,7 @@
         <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">PDF Document Manager</h2>
         <p style="color: var(--admin-text-muted); margin-bottom: 2rem;">Upload verified surveys, map PDF layouts, and certificates here. Uploaded PDFs are available inside the admin vault on the frontend.</p>
 
-        <div class="form-box" style="border: 2px dashed var(--accent-gold); padding: 3rem; text-align: center; cursor: pointer; background: rgba(214,158,78,0.02);" onclick="document.getElementById('pdfFileInput').click()">
+        <div class="form-box" style="border: 2px dashed var(--accent-gold); padding: 3rem; text-align: center; cursor: pointer; background: rgba(217,164,65,0.03);" onclick="document.getElementById('pdfFileInput').click()">
           <i class="fa-solid fa-cloud-arrow-up" style="font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 1rem;"></i>
           <h3>Upload PDF Documents</h3>
           <input type="file" id="pdfFileInput" style="display: none;" accept="application/pdf" onchange="handlePdfUpload(event)">

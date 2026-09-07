@@ -580,6 +580,7 @@ document.addEventListener('DOMContentLoaded', () => {
     langBtns.forEach(b => b.classList.remove('active'));
     targetBtn.classList.add('active');
   }
+  applyLanguage(savedLang);
 
   const defaultSiteContent = {
     home: {

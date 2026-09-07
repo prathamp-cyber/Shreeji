@@ -7,32 +7,32 @@
 
 :root {
   /* Core Colors */
-  --primary: #0C4A60;
-  --primary-light: #146B8B;
-  --primary-dark: #073140;
-  --accent-emerald: #10B981;
-  --accent-emerald-dark: #059669;
-  --accent-gold: #D69E4E;
-  --accent-gold-light: #F3C77C;
-  --accent-gold-dark: #B37D33;
+  --primary: #1E5A8A;
+  --primary-light: #4FA0D8;
+  --primary-dark: #123B5C;
+  --accent-emerald: #6FC3E8;
+  --accent-emerald-dark: #3E8FC0;
+  --accent-gold: #D9A441;
+  --accent-gold-light: #E8C179;
+  --accent-gold-dark: #B37F2C;
   
   /* Neutral Colors */
-  --bg-slate: #F8FAFC;
+  --bg-slate: #F3F8FC;
   --bg-white: #FFFFFF;
-  --text-main: #0F172A;
-  --text-muted: #475569;
+  --text-main: #0F2A3D;
+  --text-muted: #4A6478;
   --text-light: #94A3B8;
   --border-color: #E2E8F0;
   
   /* Glassmorphism & Shadows */
   --glass-bg: rgba(255, 255, 255, 0.75);
   --glass-border: rgba(255, 255, 255, 0.3);
-  --glass-dark: rgba(12, 74, 96, 0.85);
+  --glass-dark: rgba(18, 59, 92, 0.85);
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 10px 25px -5px rgba(12, 74, 96, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(12, 74, 96, 0.25);
-  --shadow-glow: 0 0 25px rgba(16, 185, 129, 0.3);
-  --shadow-gold: 0 0 25px rgba(214, 158, 78, 0.3);
+  --shadow-md: 0 10px 25px -5px rgba(18, 59, 92, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 25px 50px -12px rgba(18, 59, 92, 0.25);
+  --shadow-glow: 0 0 25px rgba(111, 195, 232, 0.3);
+  --shadow-gold: 0 0 25px rgba(217, 164, 65, 0.3);
 
   /* Typography */
   --font-heading: 'Outfit', sans-serif;
@@ -106,7 +106,7 @@ img {
 .section-tag {
   display: inline-block;
   padding: 0.4rem 1.2rem;
-  background: rgba(12, 74, 96, 0.08);
+  background: rgba(30, 90, 138, 0.08);
   color: var(--primary);
   border-radius: 50px;
   font-size: 0.875rem;
@@ -114,19 +114,19 @@ img {
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  border: 1px solid rgba(12, 74, 96, 0.15);
+  border: 1px solid rgba(30, 90, 138, 0.15);
 }
 
 .section-tag.emerald {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(111, 195, 232, 0.12);
   color: var(--accent-emerald-dark);
-  border-color: rgba(16, 185, 129, 0.2);
+  border-color: rgba(111, 195, 232, 0.25);
 }
 
 .section-tag.gold {
-  background: rgba(214, 158, 78, 0.1);
+  background: rgba(217, 164, 65, 0.12);
   color: var(--accent-gold-dark);
-  border-color: rgba(214, 158, 78, 0.2);
+  border-color: rgba(217, 164, 65, 0.25);
 }
 
 .section-title {
@@ -161,7 +161,7 @@ img {
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-light));
   color: var(--bg-white);
-  box-shadow: 0 4px 15px rgba(12, 74, 96, 0.3);
+  box-shadow: 0 4px 15px rgba(30, 90, 138, 0.3);
 }
 
 .btn-primary::before {
@@ -179,7 +179,7 @@ img {
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(12, 74, 96, 0.4);
+  box-shadow: 0 8px 25px rgba(30, 90, 138, 0.4);
 }
 
 .btn-primary:hover::before {
@@ -189,7 +189,7 @@ img {
 .btn-secondary {
   background: linear-gradient(135deg, var(--accent-gold), var(--accent-gold-dark));
   color: var(--bg-white);
-  box-shadow: 0 4px 15px rgba(214, 158, 78, 0.3);
+  box-shadow: 0 4px 15px rgba(217, 164, 65, 0.3);
 }
 
 .btn-secondary:hover {
@@ -407,7 +407,7 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  background-image: linear-gradient(135deg, rgba(11, 42, 66, 0.55) 0%, rgba(27, 79, 122, 0.35) 50%, rgba(46, 125, 209, 0.2) 100%), url('images/hero-bg.png');
+  background-image: linear-gradient(135deg, rgba(11, 42, 66, 0.55) 0%, rgba(27, 79, 122, 0.35) 50%, rgba(46, 125, 209, 0.2) 100%), url('/images/hero-bg.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -427,7 +427,7 @@ img {
   left: 10%;
   width: 350px;
   height: 350px;
-  background: rgba(16, 185, 129, 0.25);
+  background: rgba(111, 195, 232, 0.25);
 }
 
 .glow-orb-2 {
@@ -435,7 +435,7 @@ img {
   right: 15%;
   width: 450px;
   height: 450px;
-  background: rgba(214, 158, 78, 0.2);
+  background: rgba(217, 164, 65, 0.2);
 }
 
 .hero-content {
@@ -529,8 +529,8 @@ img {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(111, 195, 232, 0.12);
+  border: 1px solid rgba(111, 195, 232, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -594,7 +594,7 @@ img {
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.6),
-              0 0 35px rgba(214, 158, 78, 0.25),
+              0 0 35px rgba(217, 164, 65, 0.25),
               inset 0 1px 2px rgba(255, 255, 255, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.25);
   transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
@@ -602,9 +602,9 @@ img {
 
 .hero-photo-card:hover {
   transform: translateY(-8px) scale(1.01);
-  border-color: rgba(214, 158, 78, 0.6);
+  border-color: rgba(217, 164, 65, 0.6);
   box-shadow: 0 35px 70px -15px rgba(0, 0, 0, 0.7),
-              0 0 45px rgba(214, 158, 78, 0.4);
+              0 0 45px rgba(217, 164, 65, 0.4);
 }
 
 .hero-photo-img {
@@ -698,7 +698,7 @@ img {
 .float-top-left {
   top: 1.25rem;
   left: 1.25rem;
-  border-color: rgba(16, 185, 129, 0.45);
+  border-color: rgba(111, 195, 232, 0.45);
   animation: floatTopLeft 5s ease-in-out infinite alternate;
 }
 
@@ -709,7 +709,7 @@ img {
 .float-bottom-right {
   top: 1.25rem;
   right: 1.25rem;
-  border-color: rgba(214, 158, 78, 0.45);
+  border-color: rgba(217, 164, 65, 0.45);
   animation: floatBottomRight 5.5s ease-in-out infinite alternate;
 }
 
@@ -799,7 +799,7 @@ float-top-right {
   width: 52px;
   height: 52px;
   border-radius: 12px;
-  background: rgba(12, 74, 96, 0.1);
+  background: rgba(30, 90, 138, 0.1);
   color: var(--primary);
   display: flex;
   align-items: center;
@@ -844,7 +844,7 @@ float-top-right {
 .industry-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
-  border-color: rgba(16, 185, 129, 0.3);
+  border-color: rgba(111, 195, 232, 0.3);
 }
 
 .industry-card:hover::before {
@@ -855,7 +855,7 @@ float-top-right {
   width: 64px;
   height: 64px;
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(12, 74, 96, 0.08), rgba(16, 185, 129, 0.12));
+  background: linear-gradient(135deg, rgba(30, 90, 138, 0.08), rgba(111, 195, 232, 0.12));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1018,7 +1018,7 @@ float-top-right {
 
 .process-step:hover .step-number {
   background: var(--accent-gold);
-  box-shadow: 0 0 0 8px rgba(214, 158, 78, 0.2);
+  box-shadow: 0 0 0 8px rgba(217, 164, 65, 0.2);
 }
 
 .step-title {
@@ -1263,7 +1263,7 @@ float-top-right {
 .form-input:focus, .form-select:focus, .form-textarea:focus {
   border-color: var(--primary);
   background: var(--bg-white);
-  box-shadow: 0 0 0 4px rgba(12, 74, 96, 0.1);
+  box-shadow: 0 0 0 4px rgba(30, 90, 138, 0.1);
 }
 
 .form-success {
@@ -1275,7 +1275,7 @@ float-top-right {
 .form-success-icon {
   width: 80px;
   height: 80px;
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(111, 195, 232, 0.15);
   color: var(--accent-emerald);
   border-radius: 50%;
   display: flex;
@@ -1661,7 +1661,7 @@ float-top-right {
 .faq-search-input:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 4px rgba(12, 74, 96, 0.15);
+  box-shadow: 0 0 0 4px rgba(30, 90, 138, 0.15);
 }
 
 .faq-categories {
@@ -1689,7 +1689,7 @@ float-top-right {
   background: var(--primary);
   color: var(--bg-white);
   border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(12, 74, 96, 0.25);
+  box-shadow: 0 4px 12px rgba(30, 90, 138, 0.25);
 }
 
 /* Service Comparison Table */
@@ -1773,7 +1773,7 @@ float-top-right {
   justify-content: center;
   font-weight: 700;
   font-size: 1rem;
-  box-shadow: 0 4px 10px rgba(12, 74, 96, 0.3);
+  box-shadow: 0 4px 10px rgba(30, 90, 138, 0.3);
 }
 
 .doc-checklist-card {
@@ -1838,7 +1838,7 @@ float-top-right {
   width: 54px;
   height: 54px;
   border-radius: 14px;
-  background: rgba(214, 158, 78, 0.12);
+  background: rgba(217, 164, 65, 0.12);
   color: var(--accent-gold-dark);
   display: flex;
   align-items: center;
