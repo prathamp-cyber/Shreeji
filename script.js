@@ -988,6 +988,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         console.log('Target Area Search Executed:', { state, district, taluka, village });
 
+        // Redirect to /adipur if Taluka is "Gandhidham" and City/Village is "Adipur"
+        if (taluka === 'Gandhidham' && village === 'Adipur') {
+          window.location.href = '/adipur';
+          return;
+        }
+
         if (resultsContainer && resultTitle && resultDetails && resultTalukaTag && resultVillageTag) {
           resultTitle.textContent = `Showing results for ${village}, ${taluka}`;
           resultDetails.textContent = `Verified property listings, sector plots, and commercial land records in ${village}, ${taluka} Taluka, Kutch District, Gujarat.`;
