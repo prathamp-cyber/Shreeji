@@ -23,12 +23,13 @@
           <li><a href="/" class="nav-link">Home</a></li>
           <li><a href="/overview" class="nav-link">Overview</a></li>
           <li class="dropdown">
-            <div class="dropdown-toggle nav-link active">
+            <a href="/#target-areas" class="dropdown-toggle nav-link active" style="text-decoration: none;">
               Target Areas <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
-            </div>
+            </a>
             <div class="dropdown-menu">
-              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Gandhidham</a>
-              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Adipur</a>
+              <a href="/#target-areas" class="dropdown-item"><i class="fa-solid fa-filter"></i> Cascading Land Filter</a>
+              <a href="/gandhidham" class="dropdown-item"><i class="fa-solid fa-building"></i> Gandhidham</a>
+              <a href="/adipur" class="dropdown-item"><i class="fa-solid fa-store"></i> Adipur</a>
             </div>
           </li>
           <li><a href="/services" class="nav-link">Services</a></li>
@@ -83,34 +84,152 @@
     </div>
   </section>
 
-  <!-- Adipur Map PDF Section (Ready for user PDF) -->
-  <section class="section" id="adipurMapSection" style="background: var(--bg-slate);">
+  <!-- Target Areas Cascading Filter Section (Replaces Map PDF) -->
+  <section class="section cascading-filter-section" id="target-areas">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag gold"><i class="fa-solid fa-file-pdf"></i> Town Planning Document</span>
-        <h2 class="section-title">Adipur Commercial Market Map (PDF)</h2>
-        <p class="section-subtitle">Official commercial market layout, station road sector map, and retail plot grid for Adipur.</p>
+        <span class="section-tag gold">Target Areas & Land Search</span>
+        <h2 class="section-title">Adipur & Kutch Land Record Search</h2>
+        <p class="section-subtitle">Cascading step-by-step land record search (Gujarat AnyRoR model). Select a Taluka to unlock village and sector property filters.</p>
       </div>
 
-      <div style="background: var(--bg-white); border-radius: 24px; padding: 2rem; border: 1px solid var(--border-color); box-shadow: var(--shadow-md);" class="reveal">
-        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
-          <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="font-size: 2.5rem; color: #EF4444;"><i class="fa-solid fa-file-pdf"></i></div>
-            <div>
-              <h3 style="font-size: 1.25rem; color: var(--primary-dark);" id="adipurPdfTitle">MASTER-PLAN.pdf</h3>
-              <p style="color: var(--text-muted); font-size: 0.85rem;">Official Adipur Commercial & Station Road Master Plan</p>
+      <!-- Stepper Progress Tracker -->
+      <div class="target-stepper-wrapper reveal">
+        <div class="stepper-progress-bar">
+          <div class="stepper-progress-fill"></div>
+        </div>
+        <div class="stepper-steps">
+          <div class="stepper-step completed step-indicator-1">
+            <div class="step-badge"><i class="fa-solid fa-check"></i></div>
+            <div class="step-label">
+              <span class="step-number">Step 1</span>
+              <span class="step-name">State</span>
             </div>
           </div>
-          <a href="/MASTER-PLAN.pdf" id="adipurPdfDownloadBtn" class="btn btn-primary" download="Adipur-Commercial-Master-Plan.pdf" style="gap: 0.5rem;"><i class="fa-solid fa-download"></i> Download Master Plan PDF</a>
-        </div>
-
-        <!-- Embedded Interactive PDF Viewer -->
-        <div id="adipurPdfViewer" style="width: 100%; height: 650px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); background: #525659;">
-          <iframe src="/MASTER-PLAN.pdf" width="100%" height="100%" style="border: none;">
-            <p style="padding: 2rem; text-align: center; color: white;">Your browser does not support inline PDF viewing. <a href="/MASTER-PLAN.pdf" style="color: var(--accent-gold);">Click here to download MASTER-PLAN.pdf</a></p>
-          </iframe>
+          <div class="stepper-step completed step-indicator-2">
+            <div class="step-badge"><i class="fa-solid fa-check"></i></div>
+            <div class="step-label">
+              <span class="step-number">Step 2</span>
+              <span class="step-name">District</span>
+            </div>
+          </div>
+          <div class="stepper-step active step-indicator-3">
+            <div class="step-badge">3</div>
+            <div class="step-label">
+              <span class="step-number">Step 3</span>
+              <span class="step-name">Taluka</span>
+            </div>
+          </div>
+          <div class="stepper-step disabled step-indicator-4">
+            <div class="step-badge">4</div>
+            <div class="step-label">
+              <span class="step-number">Step 4</span>
+              <span class="step-name">City / Village</span>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- 4-Step Cascading Filter Cards Grid -->
+      <div class="cascading-filter-grid reveal">
+        <!-- Step 1 Card: State (Fixed) -->
+        <div class="filter-card step-completed step-locked card-step-1">
+          <div class="filter-card-header">
+            <div class="card-step-tag"><i class="fa-solid fa-lock"></i> Step 1</div>
+            <span class="card-status-badge completed"><i class="fa-solid fa-circle-check"></i> Locked</span>
+          </div>
+          <label class="filter-label">State</label>
+          <div class="locked-field-wrapper">
+            <input type="text" class="form-control filter-input locked state-input" value="Gujarat" readonly disabled />
+            <i class="fa-solid fa-lock locked-icon"></i>
+          </div>
+          <p class="filter-hint">Fixed choice (Site operates exclusively in Gujarat)</p>
+        </div>
+
+        <!-- Step 2 Card: District (Fixed) -->
+        <div class="filter-card step-completed step-locked card-step-2">
+          <div class="filter-card-header">
+            <div class="card-step-tag"><i class="fa-solid fa-lock"></i> Step 2</div>
+            <span class="card-status-badge completed"><i class="fa-solid fa-circle-check"></i> Locked</span>
+          </div>
+          <label class="filter-label">District</label>
+          <div class="locked-field-wrapper">
+            <input type="text" class="form-control filter-input locked district-input" value="Kutch" readonly disabled />
+            <i class="fa-solid fa-lock locked-icon"></i>
+          </div>
+          <p class="filter-hint">Fixed choice (Primary coverage region)</p>
+        </div>
+
+        <!-- Step 3 Card: Taluka (Interactive) -->
+        <div class="filter-card step-active card-step-3">
+          <div class="filter-card-header">
+            <div class="card-step-tag">Step 3</div>
+            <span class="card-status-badge active badge-step-3"><i class="fa-solid fa-circle-dot"></i> Active</span>
+          </div>
+          <label class="filter-label">Taluka <span class="required-asterisk">*</span></label>
+          <div class="select-wrapper">
+            <select class="form-control filter-select taluka-select">
+              <option value="">-- Select Taluka --</option>
+              <option value="Bhuj">Bhuj</option>
+              <option value="Anjar">Anjar</option>
+              <option value="Gandhidham" selected>Gandhidham</option>
+              <option value="Bhachau">Bhachau</option>
+              <option value="Rapar">Rapar</option>
+              <option value="Mundra">Mundra</option>
+              <option value="Mandvi">Mandvi</option>
+              <option value="Nakhatrana">Nakhatrana</option>
+              <option value="Abdasa">Abdasa</option>
+              <option value="Lakhpat">Lakhpat</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow-icon"></i>
+          </div>
+          <p class="filter-hint hint-step-3">Select 1 of 10 official Kutch Talukas</p>
+        </div>
+
+        <!-- Step 4 Card: City/Village (Cascading) -->
+        <div class="filter-card step-disabled card-step-4">
+          <div class="filter-card-header">
+            <div class="card-step-tag">Step 4</div>
+            <span class="card-status-badge disabled badge-step-4"><i class="fa-solid fa-lock"></i> Disabled</span>
+          </div>
+          <label class="filter-label">City / Village <span class="required-asterisk">*</span></label>
+          <div class="select-wrapper">
+            <select class="form-control filter-select village-select" disabled>
+              <option value="">-- Select City / Village --</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow-icon"></i>
+          </div>
+          <p class="filter-hint hint-step-4">Select a Taluka in Step 3 first</p>
+        </div>
+      </div>
+
+      <!-- Action & Search Controls -->
+      <div class="target-filter-actions reveal">
+        <button type="button" class="btn btn-gold filter-action-btn search-btn" disabled>
+          <i class="fa-solid fa-magnifying-glass"></i> Show Properties / Search
+        </button>
+        <button type="button" class="btn btn-outline filter-reset-btn reset-btn">
+          <i class="fa-solid fa-rotate-left"></i> Reset Filter
+        </button>
+      </div>
+
+      <!-- Dynamic Search Result Message Box -->
+      <div class="target-area-results results-container reveal" style="display: none;">
+        <div class="result-card">
+          <div class="result-icon-badge"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="result-content">
+            <h3 class="result-title">Showing results for Area</h3>
+            <p class="result-details"></p>
+            <div class="result-tags">
+              <span class="result-tag">State: Gujarat</span>
+              <span class="result-tag">District: Kutch</span>
+              <span class="result-tag gold result-taluka-tag">Taluka: -</span>
+              <span class="result-tag gold result-village-tag">Village: -</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 

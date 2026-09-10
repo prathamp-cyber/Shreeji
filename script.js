@@ -792,16 +792,184 @@ document.addEventListener('DOMContentLoaded', () => {
     faqSearchInput.addEventListener('input', filterFaqs);
   }
 
-  if (faqCategoryBtns.length > 0) {
-    faqCategoryBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        faqCategoryBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        filterFaqs();
+  // ==========================================================================
+  // Target Areas Cascading Filter Logic (Gujarat AnyRoR Model)
+  // ==========================================================================
+  const kutchVillagesData = {
+    "Bhuj": ["Bhuj City", "Madhapar", "Kukma", "Sukhpar", "Mirzapar", "Khavda", "Reha"],
+    "Anjar": ["Anjar City", "Meghpar-Borichi", "Sinugra", "Varsamedi", "Nagalpar", "Dudhai"],
+    "Gandhidham": ["Gandhidham", "Adipur", "Sector 1-12", "Shinay", "Kidana", "Galpadar"],
+    "Bhachau": ["Bhachau City", "Chobari", "Samakhiali", "Vondh", "Kadol", "Manfara"],
+    "Rapar": ["Rapar City", "Gagodar", "Chitrod", "Bela", "Adesar", "Palanswa"],
+    "Mundra": ["Mundra Port Area", "Baroi", "Pragpar", "Zarpara", "Dhrub", "Tunda Wandh"],
+    "Mandvi": ["Mandvi Beach Town", "Salaya", "Gadhsisa", "Koda", "Maska", "Bada"],
+    "Nakhatrana": ["Nakhatrana", "Manjal", "Desalpar", "Ravapar", "Virani", "Dahisara"],
+    "Abdasa": ["Naliya", "Kothara", "Bitez", "Jakhau", "Tera", "Votharo"],
+    "Lakhpat": ["Dayapar", "Narayan Sarovar", "Koteshwar", "Lakhpat Town", "Panandhro", "Ghaduli"]
+  };
+
+  document.querySelectorAll('.cascading-filter-section').forEach(section => {
+    const talukaSelect = section.querySelector('.taluka-select') || section.querySelector('#talukaSelect');
+    const villageSelect = section.querySelector('.village-select') || section.querySelector('#villageSelect');
+    const searchBtn = section.querySelector('.search-btn') || section.querySelector('#targetAreaSearchBtn');
+    const resetBtn = section.querySelector('.reset-btn') || section.querySelector('#targetAreaResetBtn');
+    const resultsContainer = section.querySelector('.results-container') || section.querySelector('#targetAreaResults');
+
+    const cardStep3 = section.querySelector('.card-step-3') || section.querySelector('#cardStep3');
+    const cardStep4 = section.querySelector('.card-step-4') || section.querySelector('#cardStep4');
+    const badgeStep3 = section.querySelector('.badge-step-3') || section.querySelector('#badgeStep3');
+    const badgeStep4 = section.querySelector('.badge-step-4') || section.querySelector('#badgeStep4');
+    const hintStep4 = section.querySelector('.hint-step-4') || section.querySelector('#hintStep4');
+    const stepIndicator3 = section.querySelector('.step-indicator-3') || section.querySelector('#stepIndicator3');
+    const stepIndicator4 = section.querySelector('.step-indicator-4') || section.querySelector('#stepIndicator4');
+    const stepperProgressFill = section.querySelector('.stepper-progress-fill') || section.querySelector('#stepperProgressFill');
+
+    const resultTitle = section.querySelector('.result-title') || section.querySelector('#resultTitle');
+    const resultDetails = section.querySelector('.result-details') || section.querySelector('#resultDetails');
+    const resultTalukaTag = section.querySelector('.result-taluka-tag') || section.querySelector('#resultTalukaTag');
+    const resultVillageTag = section.querySelector('.result-village-tag') || section.querySelector('#resultVillageTag');
+
+    function updateState() {
+      const selectedTaluka = talukaSelect ? talukaSelect.value : '';
+      const selectedVillage = villageSelect ? villageSelect.value : '';
+
+      if (selectedTaluka) {
+        if (cardStep3) cardStep3.className = 'filter-card step-completed card-step-3';
+        if (badgeStep3) {
+          badgeStep3.className = 'card-status-badge completed badge-step-3';
+          badgeStep3.innerHTML = '<i class="fa-solid fa-circle-check"></i> Selected';
+        }
+        if (stepIndicator3) {
+          stepIndicator3.className = 'stepper-step completed step-indicator-3';
+          const badge = stepIndicator3.querySelector('.step-badge');
+          if (badge) badge.innerHTML = '<i class="fa-solid fa-check"></i>';
+        }
+
+        if (villageSelect) villageSelect.disabled = false;
+        if (cardStep4) cardStep4.className = 'filter-card step-active card-step-4';
+        if (badgeStep4) {
+          badgeStep4.className = 'card-status-badge active badge-step-4';
+          badgeStep4.innerHTML = '<i class="fa-solid fa-circle-dot"></i> Active';
+        }
+        if (hintStep4) hintStep4.textContent = `Choose an area in ${selectedTaluka} Taluka`;
+        if (stepIndicator4 && !selectedVillage) {
+          stepIndicator4.className = 'stepper-step active step-indicator-4';
+          const badge = stepIndicator4.querySelector('.step-badge');
+          if (badge) badge.textContent = '4';
+        }
+
+        if (villageSelect) {
+          const prevVal = villageSelect.value;
+          villageSelect.innerHTML = '<option value="">-- Select City / Village --</option>';
+          const villages = kutchVillagesData[selectedTaluka] || [];
+          villages.forEach(v => {
+            const opt = document.createElement('option');
+            opt.value = v;
+            opt.textContent = v;
+            if (v === prevVal) opt.selected = true;
+            villageSelect.appendChild(opt);
+          });
+        }
+        if (stepperProgressFill) stepperProgressFill.style.width = '75%';
+      } else {
+        if (cardStep3) cardStep3.className = 'filter-card step-active card-step-3';
+        if (badgeStep3) {
+          badgeStep3.className = 'card-status-badge active badge-step-3';
+          badgeStep3.innerHTML = '<i class="fa-solid fa-circle-dot"></i> Active';
+        }
+        if (stepIndicator3) {
+          stepIndicator3.className = 'stepper-step active step-indicator-3';
+          const badge = stepIndicator3.querySelector('.step-badge');
+          if (badge) badge.textContent = '3';
+        }
+
+        if (villageSelect) {
+          villageSelect.disabled = true;
+          villageSelect.innerHTML = '<option value="">-- Select City / Village --</option>';
+        }
+        if (cardStep4) cardStep4.className = 'filter-card step-disabled card-step-4';
+        if (badgeStep4) {
+          badgeStep4.className = 'card-status-badge disabled badge-step-4';
+          badgeStep4.innerHTML = '<i class="fa-solid fa-lock"></i> Disabled';
+        }
+        if (hintStep4) hintStep4.textContent = 'Select a Taluka in Step 3 first';
+        if (stepIndicator4) {
+          stepIndicator4.className = 'stepper-step disabled step-indicator-4';
+          const badge = stepIndicator4.querySelector('.step-badge');
+          if (badge) badge.textContent = '4';
+        }
+        if (stepperProgressFill) stepperProgressFill.style.width = '50%';
+      }
+
+      if (selectedTaluka && selectedVillage) {
+        if (cardStep4) cardStep4.className = 'filter-card step-completed card-step-4';
+        if (badgeStep4) {
+          badgeStep4.className = 'card-status-badge completed badge-step-4';
+          badgeStep4.innerHTML = '<i class="fa-solid fa-circle-check"></i> Selected';
+        }
+        if (stepIndicator4) {
+          stepIndicator4.className = 'stepper-step completed step-indicator-4';
+          const badge = stepIndicator4.querySelector('.step-badge');
+          if (badge) badge.innerHTML = '<i class="fa-solid fa-check"></i>';
+        }
+        if (searchBtn) searchBtn.disabled = false;
+        if (stepperProgressFill) stepperProgressFill.style.width = '100%';
+      } else {
+        if (searchBtn) searchBtn.disabled = true;
+      }
+    }
+
+    if (talukaSelect) {
+      talukaSelect.addEventListener('change', () => {
+        if (villageSelect) villageSelect.value = '';
+        if (resultsContainer) resultsContainer.style.display = 'none';
+        updateState();
       });
-    });
-  }
+    }
+
+    if (villageSelect) {
+      villageSelect.addEventListener('change', () => {
+        if (resultsContainer) resultsContainer.style.display = 'none';
+        updateState();
+      });
+    }
+
+    if (searchBtn) {
+      searchBtn.addEventListener('click', () => {
+        const state = 'Gujarat';
+        const district = 'Kutch';
+        const taluka = talukaSelect ? talukaSelect.value : '';
+        const village = villageSelect ? villageSelect.value : '';
+
+        console.log('Target Area Search Executed:', { state, district, taluka, village });
+
+        if (resultsContainer && resultTitle && resultDetails && resultTalukaTag && resultVillageTag) {
+          resultTitle.textContent = `Showing results for ${village}, ${taluka}`;
+          resultDetails.textContent = `Verified property listings, sector plots, and commercial land records in ${village}, ${taluka} Taluka, Kutch District, Gujarat.`;
+          resultTalukaTag.textContent = `Taluka: ${taluka}`;
+          resultVillageTag.textContent = `Village: ${village}`;
+          resultsContainer.style.display = 'block';
+          resultsContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        if (talukaSelect) talukaSelect.value = '';
+        if (villageSelect) villageSelect.value = '';
+        if (resultsContainer) resultsContainer.style.display = 'none';
+        updateState();
+      });
+    }
+
+    if (talukaSelect && villageSelect) {
+      updateState();
+    }
+  });
 
   // Ensure current language is applied after all dynamic rendering
   applyLanguage(savedLang);
 });
+
+

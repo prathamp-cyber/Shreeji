@@ -28,12 +28,13 @@
           <li><a href="/" class="nav-link"><span data-i18n="nav_home">Home</span></a></li>
           <li><a href="/overview" class="nav-link"><span data-i18n="nav_overview">Overview</span></a></li>
           <li class="dropdown">
-            <div class="dropdown-toggle nav-link">
+            <a href="/#target-areas" class="dropdown-toggle nav-link" style="text-decoration: none;">
               <span data-i18n="nav_target_areas">Target Areas</span> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="dropdown-arrow-icon"><path d="m6 9 6 6 6-6"/></svg>
-            </div>
+            </a>
             <div class="dropdown-menu">
-              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Gandhidham</a>
-              <a href="/MASTER-PLAN.pdf" target="_blank" class="dropdown-item"><i class="fa-solid fa-map-location-dot"></i> Adipur</a>
+              <a href="/#target-areas" class="dropdown-item"><i class="fa-solid fa-filter"></i> Cascading Land Filter</a>
+              <a href="/gandhidham" class="dropdown-item"><i class="fa-solid fa-building"></i> Gandhidham</a>
+              <a href="/adipur" class="dropdown-item"><i class="fa-solid fa-store"></i> Adipur</a>
             </div>
           </li>
           <li><a href="/services" class="nav-link"><span data-i18n="nav_services">Services</span></a></li>
@@ -178,42 +179,155 @@
     </div>
   </section>
 
-  <!-- Commercial Property Sectors (Target Areas Preview) -->
-  <section class="section" id="industries">
+  <!-- Target Areas Cascading Filter Section -->
+  <section class="section" id="target-areas">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-tag gold" data-i18n="areas_tag">Target Areas & Property Maps</span>
-        <h2 class="section-title" data-i18n="areas_title">Gandhidham & Adipur Sector Maps</h2>
-        <p class="section-subtitle" data-i18n="areas_desc">Click below to open and view the official Master Plan PDF for Gandhidham and Adipur.</p>
+        <span class="section-tag gold">Target Areas & Land Search</span>
+        <h2 class="section-title">Kutch District Land Records & Sector Filter</h2>
+        <p class="section-subtitle">Cascading step-by-step land record search (Gujarat AnyRoR model). Select a Taluka to unlock village and sector property filters.</p>
       </div>
 
-      <div class="industries-grid">
-        <a href="/MASTER-PLAN.pdf" target="_blank" class="industry-card reveal" style="text-decoration: none; color: inherit;">
-          <div>
-            <div class="industry-icon-box"><i class="fa-solid fa-building"></i></div>
-            <h3 class="industry-title">Gandhidham <i class="fa-solid fa-file-pdf" style="font-size: 1rem; margin-left: 0.5rem; color: #EF4444;"></i></h3>
-            <p class="industry-desc" data-i18n="gandhidham_desc">Click to view the official Gandhidham Master Plan PDF with Tagore Road, Sector layouts, and commercial market zones.</p>
+      <!-- Stepper Progress Tracker -->
+      <div class="target-stepper-wrapper reveal">
+        <div class="stepper-progress-bar">
+          <div class="stepper-progress-fill" id="stepperProgressFill"></div>
+        </div>
+        <div class="stepper-steps">
+          <div class="stepper-step completed" id="stepIndicator1">
+            <div class="step-badge"><i class="fa-solid fa-check"></i></div>
+            <div class="step-label">
+              <span class="step-number">Step 1</span>
+              <span class="step-name">State</span>
+            </div>
           </div>
-          <div class="industry-tags">
-            <span class="tag">Gandhidham</span>
-            <span class="tag" style="background: var(--primary); color: white;" data-i18n="open_pdf_btn">Open Master Plan PDF ↗</span>
+          <div class="stepper-step completed" id="stepIndicator2">
+            <div class="step-badge"><i class="fa-solid fa-check"></i></div>
+            <div class="step-label">
+              <span class="step-number">Step 2</span>
+              <span class="step-name">District</span>
+            </div>
           </div>
-        </a>
-
-        <a href="/MASTER-PLAN.pdf" target="_blank" class="industry-card reveal" style="text-decoration: none; color: inherit;">
-          <div>
-            <div class="industry-icon-box"><i class="fa-solid fa-store"></i></div>
-            <h3 class="industry-title">Adipur <i class="fa-solid fa-file-pdf" style="font-size: 1rem; margin-left: 0.5rem; color: #EF4444;"></i></h3>
-            <p class="industry-desc" data-i18n="adipur_desc">Click to view the official Adipur Master Plan PDF with Station Road commercial plot grid and retail market maps.</p>
+          <div class="stepper-step active" id="stepIndicator3">
+            <div class="step-badge">3</div>
+            <div class="step-label">
+              <span class="step-number">Step 3</span>
+              <span class="step-name">Taluka</span>
+            </div>
           </div>
-          <div class="industry-tags">
-            <span class="tag">Adipur</span>
-            <span class="tag" style="background: var(--accent-emerald-dark); color: white;" data-i18n="open_pdf_btn">Open Master Plan PDF ↗</span>
+          <div class="stepper-step disabled" id="stepIndicator4">
+            <div class="step-badge">4</div>
+            <div class="step-label">
+              <span class="step-number">Step 4</span>
+              <span class="step-name">City / Village</span>
+            </div>
           </div>
-        </a>
+        </div>
       </div>
+
+      <!-- 4-Step Cascading Filter Cards Grid -->
+      <div class="cascading-filter-grid reveal">
+        <!-- Step 1 Card: State (Fixed) -->
+        <div class="filter-card step-completed step-locked" id="cardStep1">
+          <div class="filter-card-header">
+            <div class="card-step-tag"><i class="fa-solid fa-lock"></i> Step 1</div>
+            <span class="card-status-badge completed"><i class="fa-solid fa-circle-check"></i> Locked</span>
+          </div>
+          <label class="filter-label" for="stateSelect">State</label>
+          <div class="locked-field-wrapper">
+            <input type="text" id="stateSelect" class="form-control filter-input locked" value="Gujarat" readonly disabled />
+            <i class="fa-solid fa-lock locked-icon"></i>
+          </div>
+          <p class="filter-hint">Fixed choice (Site operates exclusively in Gujarat)</p>
+        </div>
+
+        <!-- Step 2 Card: District (Fixed) -->
+        <div class="filter-card step-completed step-locked" id="cardStep2">
+          <div class="filter-card-header">
+            <div class="card-step-tag"><i class="fa-solid fa-lock"></i> Step 2</div>
+            <span class="card-status-badge completed"><i class="fa-solid fa-circle-check"></i> Locked</span>
+          </div>
+          <label class="filter-label" for="districtSelect">District</label>
+          <div class="locked-field-wrapper">
+            <input type="text" id="districtSelect" class="form-control filter-input locked" value="Kutch" readonly disabled />
+            <i class="fa-solid fa-lock locked-icon"></i>
+          </div>
+          <p class="filter-hint">Fixed choice (Primary coverage region)</p>
+        </div>
+
+        <!-- Step 3 Card: Taluka (Interactive) -->
+        <div class="filter-card step-active" id="cardStep3">
+          <div class="filter-card-header">
+            <div class="card-step-tag">Step 3</div>
+            <span class="card-status-badge active" id="badgeStep3"><i class="fa-solid fa-circle-dot"></i> Active</span>
+          </div>
+          <label class="filter-label" for="talukaSelect">Taluka <span class="required-asterisk">*</span></label>
+          <div class="select-wrapper">
+            <select id="talukaSelect" class="form-control filter-select">
+              <option value="">-- Select Taluka --</option>
+              <option value="Bhuj">Bhuj</option>
+              <option value="Anjar">Anjar</option>
+              <option value="Gandhidham">Gandhidham</option>
+              <option value="Bhachau">Bhachau</option>
+              <option value="Rapar">Rapar</option>
+              <option value="Mundra">Mundra</option>
+              <option value="Mandvi">Mandvi</option>
+              <option value="Nakhatrana">Nakhatrana</option>
+              <option value="Abdasa">Abdasa</option>
+              <option value="Lakhpat">Lakhpat</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow-icon"></i>
+          </div>
+          <p class="filter-hint" id="hintStep3">Select 1 of 10 official Kutch Talukas</p>
+        </div>
+
+        <!-- Step 4 Card: City/Village (Cascading) -->
+        <div class="filter-card step-disabled" id="cardStep4">
+          <div class="filter-card-header">
+            <div class="card-step-tag">Step 4</div>
+            <span class="card-status-badge disabled" id="badgeStep4"><i class="fa-solid fa-lock"></i> Disabled</span>
+          </div>
+          <label class="filter-label" for="villageSelect">City / Village <span class="required-asterisk">*</span></label>
+          <div class="select-wrapper">
+            <select id="villageSelect" class="form-control filter-select" disabled>
+              <option value="">-- Select City / Village --</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow-icon"></i>
+          </div>
+          <p class="filter-hint" id="hintStep4">Select a Taluka in Step 3 first</p>
+        </div>
+      </div>
+
+      <!-- Action & Search Controls -->
+      <div class="target-filter-actions reveal">
+        <button type="button" id="targetAreaSearchBtn" class="btn btn-gold filter-action-btn" disabled>
+          <i class="fa-solid fa-magnifying-glass"></i> Show Properties / Search
+        </button>
+        <button type="button" id="targetAreaResetBtn" class="btn btn-outline filter-reset-btn">
+          <i class="fa-solid fa-rotate-left"></i> Reset Filter
+        </button>
+      </div>
+
+      <!-- Dynamic Search Result Message Box -->
+      <div id="targetAreaResults" class="target-area-results reveal" style="display: none;">
+        <div class="result-card">
+          <div class="result-icon-badge"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="result-content">
+            <h3 class="result-title" id="resultTitle">Showing results for Area</h3>
+            <p class="result-details" id="resultDetails"></p>
+            <div class="result-tags">
+              <span class="result-tag" id="resultStateTag">State: Gujarat</span>
+              <span class="result-tag" id="resultDistrictTag">District: Kutch</span>
+              <span class="result-tag gold" id="resultTalukaTag">Taluka: -</span>
+              <span class="result-tag gold" id="resultVillageTag">Village: -</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
+
 
   <!-- Verified Land Opportunities Section (Admin Managed) -->
   <section class="section" id="listings" style="background: var(--bg-slate);">
@@ -621,10 +735,9 @@
         <div>
           <h4 class="footer-title" data-i18n="footer_target_areas">Target Areas</h4>
           <ul class="footer-links">
-            <li><a href="/MASTER-PLAN.pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color: #EF4444; margin-right: 0.4rem;"></i> Gandhidham Sector Map</a></li>
-            <li><a href="/MASTER-PLAN.pdf" target="_blank"><i class="fa-solid fa-file-pdf" style="color: #EF4444; margin-right: 0.4rem;"></i> Adipur Market Map</a></li>
-            <li><a href="/gandhidham">Gandhidham Commercial Hub</a></li>
-            <li><a href="/adipur">Adipur Retail Belt</a></li>
+            <li><a href="/#target-areas"><i class="fa-solid fa-filter" style="color: var(--accent-gold); margin-right: 0.4rem;"></i> AnyRoR Cascading Filter</a></li>
+            <li><a href="/gandhidham"><i class="fa-solid fa-building" style="color: var(--primary-light); margin-right: 0.4rem;"></i> Gandhidham Commercial Hub</a></li>
+            <li><a href="/adipur"><i class="fa-solid fa-store" style="color: var(--accent-emerald); margin-right: 0.4rem;"></i> Adipur Retail Belt</a></li>
           </ul>
         </div>
 
