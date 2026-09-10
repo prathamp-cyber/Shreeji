@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 8b. 3D Interactive Map Modal Logic (Adipur Wards)
+  // 8b. 3D Interactive Map Modal Logic (Adipur Wards - Full Screen)
   const view3dMapBtn = document.getElementById('view-3d-map-btn');
   const modal3DMap = document.getElementById('modal3DMap');
   const close3DModalBtn = document.getElementById('close3DModalBtn');
@@ -280,12 +280,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!modal3DMap) return;
     modal3DMap.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Request native fullscreen mode if supported
+    try {
+      if (modal3DMap.requestFullscreen) {
+        modal3DMap.requestFullscreen().catch(() => {});
+      } else if (modal3DMap.webkitRequestFullscreen) {
+        modal3DMap.webkitRequestFullscreen();
+      } else if (modal3DMap.msRequestFullscreen) {
+        modal3DMap.msRequestFullscreen();
+      }
+    } catch (e) {
+      console.log('Fullscreen API fallback to 100vw/100vh CSS mode');
+    }
   }
 
   function close3DModal() {
     if (!modal3DMap) return;
     modal3DMap.classList.remove('active');
     document.body.style.overflow = 'auto';
+
+    if (document.fullscreenElement || document.webkitFullscreenElement) {
+      try {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      } catch (e) {}
+    }
   }
 
   if (view3dMapBtn) {
