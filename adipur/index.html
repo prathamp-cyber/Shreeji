@@ -442,34 +442,17 @@
 
   <!-- 3D Interactive Map Modal -->
   <div class="modal-overlay" id="modal3DMap">
-    <div class="modal-container modal-3d-container">
+    <div class="modal-container modal-3d-full-container">
       <div class="modal-header modal-3d-header">
-        <button class="modal-close" id="close3DModalBtn"><i class="fa-solid fa-xmark"></i></button>
-        <div class="modal-3d-badge"><i class="fa-solid fa-compass-drafting"></i> Spatial GIS Preview</div>
-        <h2 style="color: white; font-size: 1.6rem; margin-top: 0.5rem;">3D Map — Coming Soon</h2>
-        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-top: 0.25rem;">
-          Our interactive 3D spatial map engine for Adipur Wards (SRC Land Division) is currently under active preparation.
-        </p>
+        <button class="modal-close" id="close3DModalBtn" aria-label="Close 3D Map Modal"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-3d-header-left">
+          <div class="modal-3d-badge"><i class="fa-solid fa-cube"></i> Interactive 3D Plot Layout</div>
+          <h2 style="color: white; font-size: 1.4rem; margin-top: 0.25rem;">Adipur Wards & Plot Viewer</h2>
+        </div>
       </div>
 
-      <div class="modal-body modal-3d-body">
-        <div class="modal-3d-preview-card">
-          <div class="preview-icon-wrapper">
-            <i class="fa-solid fa-cube glow-icon"></i>
-          </div>
-          <h3>Next-Gen 3D GIS Integration</h3>
-          <p>Once linked, you will be able to explore high-precision 3D terrain elevation, individual SRC plot boundaries across Wards 1–6, and live commercial availability.</p>
-          <div class="modal-3d-features">
-            <span class="feature-chip"><i class="fa-solid fa-check"></i> Ward 1 to 6 Boundaries</span>
-            <span class="feature-chip"><i class="fa-solid fa-check"></i> SRC Plot Survey Numbers</span>
-            <span class="feature-chip"><i class="fa-solid fa-check"></i> Elevation & Height Layers</span>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <button class="btn btn-gold" id="dismiss3DModalBtn" style="padding: 0.75rem 2rem; min-width: 160px;">
-            Got it
-          </button>
-        </div>
+      <div class="modal-body modal-3d-full-body">
+        <iframe id="map3dIframe" src="/adipur/3d-viewer/index.html" class="modal-3d-iframe" title="Adipur 3D Interactive Map Viewer" allow="fullscreen"></iframe>
       </div>
     </div>
   </div>
