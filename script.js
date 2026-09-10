@@ -270,6 +270,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 8b. 3D Interactive Map Modal Logic (Adipur Wards)
+  const view3dMapBtn = document.getElementById('view-3d-map-btn');
+  const modal3DMap = document.getElementById('modal3DMap');
+  const close3DModalBtn = document.getElementById('close3DModalBtn');
+  const dismiss3DModalBtn = document.getElementById('dismiss3DModalBtn');
+
+  function open3DModal() {
+    if (!modal3DMap) return;
+    modal3DMap.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close3DModal() {
+    if (!modal3DMap) return;
+    modal3DMap.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+
+  if (view3dMapBtn) {
+    view3dMapBtn.addEventListener('click', open3DModal);
+  }
+
+  if (close3DModalBtn) {
+    close3DModalBtn.addEventListener('click', close3DModal);
+  }
+
+  if (dismiss3DModalBtn) {
+    dismiss3DModalBtn.addEventListener('click', close3DModal);
+  }
+
+  if (modal3DMap) {
+    modal3DMap.addEventListener('click', (e) => {
+      if (e.target === modal3DMap) close3DModal();
+    });
+  }
+
   // 9. Language Switcher (EN, GUJ, HI)
   const langBtns = document.querySelectorAll('.lang-btn');
 

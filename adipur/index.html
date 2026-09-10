@@ -224,6 +224,111 @@
     </div>
   </section>
 
+  <!-- Adipur Wards & Administrative Zones Section -->
+  <section class="section adipur-wards-section" id="adipur-wards">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag gold">Sindhu Resettlement Corporation (SRC)</span>
+        <h2 class="section-title">Adipur Wards & Administrative Zones</h2>
+        <p class="section-subtitle">Adipur is administratively divided into 6 main wards managed by the Sindhu Resettlement Corporation. Explore ward breakdown and commercial zones below.</p>
+      </div>
+
+      <!-- 6 Ward Cards Grid -->
+      <div class="wards-grid reveal">
+        <div class="ward-card">
+          <div class="ward-card-header">
+            <div class="ward-badge"><i class="fa-solid fa-layer-group"></i> 1</div>
+            <span class="ward-tag">Commercial & Retail</span>
+          </div>
+          <h3 class="ward-title">Ward 1</h3>
+          <p class="ward-desc">Residential & commercial mixed-use zone near Station Road corridor.</p>
+          <div class="ward-footer">
+            <span class="ward-authority"><i class="fa-solid fa-building-flag"></i> SRC Managed</span>
+          </div>
+        </div>
+
+        <div class="ward-card">
+          <div class="ward-card-header">
+            <div class="ward-badge"><i class="fa-solid fa-layer-group"></i> 2</div>
+            <span class="ward-tag">Residential & Market</span>
+          </div>
+          <h3 class="ward-title">Ward 2</h3>
+          <p class="ward-desc">Prime residential sector & local retail market shopping complex area.</p>
+          <div class="ward-footer">
+            <span class="ward-authority"><i class="fa-solid fa-building-flag"></i> SRC Managed</span>
+          </div>
+        </div>
+
+        <div class="ward-card">
+          <div class="ward-card-header">
+            <div class="ward-badge"><i class="fa-solid fa-layer-group"></i> 3</div>
+            <span class="ward-tag">Institutional & Commercial</span>
+          </div>
+          <h3 class="ward-title">Ward 3</h3>
+          <p class="ward-desc">High-density commercial retail markets & institutional plot layouts.</p>
+          <div class="ward-footer">
+            <span class="ward-authority"><i class="fa-solid fa-building-flag"></i> SRC Managed</span>
+          </div>
+        </div>
+
+        <div class="ward-card">
+          <div class="ward-card-header">
+            <div class="ward-badge"><i class="fa-solid fa-layer-group"></i> 4</div>
+            <span class="ward-tag">Township & Offices</span>
+          </div>
+          <h3 class="ward-title">Ward 4</h3>
+          <p class="ward-desc">Central township corridor featuring corporate business & professional offices.</p>
+          <div class="ward-footer">
+            <span class="ward-authority"><i class="fa-solid fa-building-flag"></i> SRC Managed</span>
+          </div>
+        </div>
+
+        <div class="ward-card">
+          <div class="ward-card-header">
+            <div class="ward-badge"><i class="fa-solid fa-layer-group"></i> 5</div>
+            <span class="ward-tag">Development Zone</span>
+          </div>
+          <h3 class="ward-title">Ward 5</h3>
+          <p class="ward-desc">Residential housing layout with upcoming commercial & rental developments.</p>
+          <div class="ward-footer">
+            <span class="ward-authority"><i class="fa-solid fa-building-flag"></i> SRC Managed</span>
+          </div>
+        </div>
+
+        <div class="ward-card">
+          <div class="ward-card-header">
+            <div class="ward-badge"><i class="fa-solid fa-layer-group"></i> 6</div>
+            <span class="ward-tag">Transport & Trade</span>
+          </div>
+          <h3 class="ward-title">Ward 6</h3>
+          <p class="ward-desc">Station Road approach & logistics commercial land plot coverage.</p>
+          <div class="ward-footer">
+            <span class="ward-authority"><i class="fa-solid fa-building-flag"></i> SRC Managed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Interactive Map Call-to-Action Banner -->
+      <div class="wards-3d-cta-banner reveal">
+        <div class="cta-banner-content">
+          <div class="cta-banner-icon">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <div class="cta-banner-text">
+            <h3>Explore Adipur Wards in Interactive 3D</h3>
+            <p>Visualize Ward boundaries, SRC plot allocations, and commercial zones with immersive spatial GIS mapping.</p>
+          </div>
+        </div>
+        <div class="cta-banner-action">
+          <button id="view-3d-map-btn" class="btn btn-3d-map">
+            <i class="fa-solid fa-cube"></i> View Interactive 3D Map
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Featured Commercial Rental Listings in Adipur -->
   <section class="section" style="background: var(--bg-white);">
     <div class="container">
@@ -331,6 +436,50 @@
           <p>Our Adipur commercial manager will get back to you shortly.</p>
           <button class="btn btn-outline" onclick="closeModal()">Close</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3D Interactive Map Modal -->
+  <div class="modal-overlay" id="modal3DMap">
+    <div class="modal-container modal-3d-container">
+      <div class="modal-header modal-3d-header">
+        <button class="modal-close" id="close3DModalBtn"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-3d-badge"><i class="fa-solid fa-compass-drafting"></i> Spatial GIS Preview</div>
+        <h2 style="color: white; font-size: 1.6rem; margin-top: 0.5rem;">3D Map — Coming Soon</h2>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.95rem; margin-top: 0.25rem;">
+          Our interactive 3D spatial map engine for Adipur Wards (SRC Land Division) is currently under active preparation.
+        </p>
+      </div>
+
+      <div class="modal-body modal-3d-body">
+        <div class="modal-3d-preview-card">
+          <div class="preview-icon-wrapper">
+            <i class="fa-solid fa-cube glow-icon"></i>
+          </div>
+          <h3>Next-Gen 3D GIS Integration</h3>
+          <p>Once linked, you will be able to explore high-precision 3D terrain elevation, individual SRC plot boundaries across Wards 1–6, and live commercial availability.</p>
+          <div class="modal-3d-features">
+            <span class="feature-chip"><i class="fa-solid fa-check"></i> Ward 1 to 6 Boundaries</span>
+            <span class="feature-chip"><i class="fa-solid fa-check"></i> SRC Plot Survey Numbers</span>
+            <span class="feature-chip"><i class="fa-solid fa-check"></i> Elevation & Height Layers</span>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <button class="btn btn-gold" id="dismiss3DModalBtn" style="padding: 0.75rem 2rem; min-width: 160px;">
+            Got it
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none; padding: 0;">
+        <p>© 2026 Shreeji Real Estate Consultant. Adipur Commercial Belt.</p>
+        <p><a href="/" style="color: var(--accent-gold);">Back to Main Home</a></p>
       </div>
     </div>
   </footer>
