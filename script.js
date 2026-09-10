@@ -348,7 +348,10 @@ document.addEventListener('DOMContentLoaded', () => {
       faq_q3: 'How do you assist commercial tenants and landlords with legal due diligence?',
       faq_a3: 'We handle 100% of title verification, property ownership checks, municipal tax clearance, tenant background verification, and formal registered lease deed drafting for smooth operations.',
       faq_q4: 'What are the typical security deposit and brokerage terms for renting commercial spaces?',
-      faq_a4: 'Security deposits usually range from 3 to 6 months of rent depending on the location and property type, with flexible rent negotiation and transparent fee structures for both tenants and landlords.'
+      faq_a4: 'Security deposits usually range from 3 to 6 months of rent depending on the location and property type, with flexible rent negotiation and transparent fee structures for both tenants and landlords.',
+      target_hero_badge: '<i class="fa-solid fa-map-location-dot"></i> Land Record Search',
+      target_hero_title: 'Target Areas & <span>Land Record Search</span>',
+      target_hero_sub: 'Step-by-step cascading land record search across Kutch District (Gujarat AnyRoR Model). Select a Taluka to unlock village and sector property filters.'
     },
     guj: {
       nav_home: 'હોમ',
@@ -424,7 +427,10 @@ document.addEventListener('DOMContentLoaded', () => {
       faq_q3: 'તમે ભાડૂઆતો અને માલિકોને કાનૂની ચકાસણીમાં કેવી રીતે મદદ કરો છો?',
       faq_a3: 'અમે મિલકતની માલિકી ચકાસણી, ટાઇટલ ચેક, મ્યુનિસિપલ ટેક્સ ક્લિયરન્સ અને ૧૦૦% કાયદાકીય રજીસ્ટર્ડ લીઝ ડીડ તૈયાર કરીએ છીએ.',
       faq_q4: 'કોમર્શિયલ જગ્યા ભાડે લેવા માટે સિક્યોરિટી ડિપોઝિટની શરતો શું હોય છે?',
-      faq_a4: 'સ્થળ અને પ્રોપર્ટીના પ્રકાર આધારે સામાન્ય રીતે ૩ થી ૬ મહિનાની સિક્યોરિટી ડિપોઝિટ હોય છે, જેમાં સરળ વાટાઘાટો અને પારદર્શક શરતો પૂરી પાડવામાં આવે છે.'
+      faq_a4: 'સ્થળ અને પ્રોપર્ટીના પ્રકાર આધારે સામાન્ય રીતે ૩ થી ૬ મહિનાની સિક્યોરિટી ડિપોઝિટ હોય છે, જેમાં સરળ વાટાઘાટો અને પારદર્શક શરતો પૂરી પાડવામાં આવે છે.',
+      target_hero_badge: '<i class="fa-solid fa-map-location-dot"></i> જમીન રેકોર્ડ શોધો',
+      target_hero_title: 'લક્ષ્ય વિસ્તારો અને <span>જમીન શોધી બતાવો</span>',
+      target_hero_sub: 'કચ્છ જિલ્લામાં સ્ટેપ-બાય-સ્ટેપ કેસ્કેડિંગ લેન્ડ રેકોર્ડ સર્ચ (ગુજરાત AnyRoR મોડેલ). સરહદી તાલુકો પસંદ કરો અને ગામ અને ક્ષેત્ર ફિલ્ટર અનલૉક કરો.'
     },
     hi: {
       nav_home: 'होम',
@@ -500,7 +506,10 @@ document.addEventListener('DOMContentLoaded', () => {
       faq_q3: 'आप किरायेदारों और मकान मालिकों को कानूनी सत्यापन में कैसे सहायता करते हैं?',
       faq_a3: 'हम संपत्ति के स्वामित्व की जांच, टाइटल सत्यापन, नगर निगम टैक्स क्लीयरेंस और 100% कानूनी रूप से पंजीकृत लीज डीड तैयार करते हैं।',
       faq_q4: 'कमर्शियल स्पेस किराए पर लेने हेतु सिक्योरिटी डिपॉजिट और शर्तें क्या हैं?',
-      faq_a4: 'स्थान और संपत्ति के प्रकार के आधार पर आमतौर पर 3 से 6 महीने का सिक्योरिटी डिपॉजिट होता है, जिसमें पारदर्शी बातचीत और आसान शर्तें शामिल हैं।'
+      faq_a4: 'स्थान और संपत्ति के प्रकार के आधार पर आमतौर पर 3 से 6 महीने का सिक्योरिटी डिपॉजिट होता है, जिसमें पारदर्शी बातचीत और आसान शर्तें शामिल हैं।',
+      target_hero_badge: '<i class="fa-solid fa-map-location-dot"></i> भूमि रिकॉर्ड खोज',
+      target_hero_title: 'टारगेट एरिया एवं <span>भूमि रिकॉर्ड खोज</span>',
+      target_hero_sub: 'कच्छ जिले में चरण-दर-चरण कैस्केडिंग भूमि रिकॉर्ड खोज (गुजरात AnyRoR मॉडल)। तालुका चुनें और ग्राम एवं क्षेत्र फ़िल्टर अनलॉक करें।'
     }
   };
 

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gandhidham Commercial Rental & Leasing | Offices, Shops & Commercial Plots</title>
-  <meta name="description" content="Commercial rental properties in Gandhidham. Premium office spaces, retail shops for rent, showrooms on Tagor Road, and commercial plots on long-term lease.">
+  <title>Target Areas & Land Search | Shreeji Property Consultant - Kutch Land Records</title>
+  <meta name="description" content="Step-by-step cascading land record and sector property search across Kutch District talukas and villages (Gujarat AnyRoR Model).">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Sticky Navigation Header -->
   <header class="header" id="header">
     <div class="container">
       <nav class="navbar">
@@ -20,22 +20,22 @@
         </a>
         
         <ul class="nav-links" id="navLinks">
-          <li><a href="/" class="nav-link">Home</a></li>
-          <li><a href="/overview" class="nav-link">Overview</a></li>
-          <li><a href="/target-areas" class="nav-link"><span data-i18n="nav_target_areas">Target Areas</span></a></li>
-          <li><a href="/services" class="nav-link">Services</a></li>
-          <li><a href="/process" class="nav-link">Process</a></li>
-          <li><a href="/faq" class="nav-link">FAQ</a></li>
+          <li><a href="/" class="nav-link"><span data-i18n="nav_home">Home</span></a></li>
+          <li><a href="/overview" class="nav-link"><span data-i18n="nav_overview">Overview</span></a></li>
+          <li><a href="/target-areas" class="nav-link active"><span data-i18n="nav_target_areas">Target Areas</span></a></li>
+          <li><a href="/services" class="nav-link"><span data-i18n="nav_services">Services</span></a></li>
+          <li><a href="/process" class="nav-link"><span data-i18n="nav_process">Process</span></a></li>
+          <li><a href="/faq" class="nav-link"><span data-i18n="nav_faq">FAQ</span></a></li>
         </ul>
 
         <div class="nav-actions">
           <div class="lang-switch">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="guj">ગુજ</button>
-            <button class="lang-btn" data-lang="hi">हिन्दी</button>
+            <button class="lang-btn" data-lang="hi">હિન્દી</button>
           </div>
           <button class="btn btn-primary" onclick="openModal('buy')" style="padding: 0.6rem 1.25rem; font-size: 0.9rem;">
-            Contact Us
+            <span data-i18n="nav_contact">Contact Us</span>
           </button>
         </div>
 
@@ -46,41 +46,32 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Page Hero Banner -->
   <section class="hero">
     <div class="glow-orb glow-orb-1"></div>
     <div class="glow-orb glow-orb-2"></div>
 
-    <div class="container">
-      <div class="hero-content reveal" style="padding: 3rem 0; text-align: center; max-width: 850px; margin: 0 auto;">
-        <div class="hero-badge" style="margin: 0 auto 1.5rem auto;" data-i18n="gandhidham_hero_badge">
-          <i class="fa-solid fa-building"></i> Commercial Hub
+    <div class="container hero-container" style="padding-top: 5rem; padding-bottom: 3rem;">
+      <div class="hero-content reveal" style="max-width: 850px; margin: 0 auto; text-align: center;">
+        <div class="hero-badge" style="margin: 0 auto 1.5rem auto;" data-i18n="target_hero_badge">
+          <i class="fa-solid fa-map-location-dot"></i> Land Record Search
         </div>
-        <h1 class="hero-title" data-i18n="gandhidham_hero_title">
-          Commercial Properties for Rent in <span>Gandhidham Market</span>
+        <h1 class="hero-title" style="font-size: 2.75rem; margin-bottom: 1.25rem;" data-i18n="target_hero_title">
+          Target Areas & <span>Land Record Search</span>
         </h1>
-        <p class="hero-subtitle" style="margin: 0 auto 2rem auto;" data-i18n="gandhidham_hero_sub">
-          Prime retail shops, corporate offices, showrooms, and commercial lease plots available across Tagor Road, Sector 1-12, and Main Market.
+        <p class="hero-subtitle" style="font-size: 1.15rem; margin: 0 auto 2rem auto; max-width: 750px;" data-i18n="target_hero_sub">
+          Step-by-step cascading land record search across Kutch District (Gujarat AnyRoR Model). Select a Taluka to unlock village and sector property filters.
         </p>
-
-        <div class="hero-cta-group" style="justify-content: center;">
-          <button class="btn btn-primary" onclick="openModal('buy')" data-i18n="buy_btn">
-            <i class="fa-solid fa-magnifying-glass-location"></i> Find Commercial Rental Space
-          </button>
-          <button class="btn btn-secondary" onclick="openModal('sell')" data-i18n="sell_btn">
-            <i class="fa-solid fa-key"></i> Rent Out Property in Gandhidham
-          </button>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Target Areas Cascading Filter Section (Replaces Map PDF) -->
+  <!-- Standalone Cascading Filter Section -->
   <section class="section cascading-filter-section" id="target-areas">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-tag gold">Target Areas & Land Search</span>
-        <h2 class="section-title">Gandhidham & Kutch Land Record Search</h2>
+        <h2 class="section-title">Kutch District Land Records & Sector Filter</h2>
         <p class="section-subtitle">Cascading step-by-step land record search (Gujarat AnyRoR model). Select a Taluka to unlock village and sector property filters.</p>
       </div>
 
@@ -163,7 +154,7 @@
               <option value="">-- Select Taluka --</option>
               <option value="Bhuj">Bhuj</option>
               <option value="Anjar">Anjar</option>
-              <option value="Gandhidham" selected>Gandhidham</option>
+              <option value="Gandhidham">Gandhidham</option>
               <option value="Bhachau">Bhachau</option>
               <option value="Rapar">Rapar</option>
               <option value="Mundra">Mundra</option>
@@ -224,65 +215,28 @@
     </div>
   </section>
 
-  <!-- Featured Commercial Rental Listings in Gandhidham -->
-  <section class="section" style="background: var(--bg-white);">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-tag emerald">Verified Rental Properties</span>
-        <h2 class="section-title">Commercial Spaces Available in Gandhidham</h2>
-        <p class="section-subtitle">Hand-picked shops, office spaces, and commercial plots available for immediate lease.</p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card buyer-card reveal">
-          <div class="tag" style="background: var(--primary); color: white; margin-bottom: 1rem;">Corporate Office Suite</div>
-          <h3>1,200 Sq.Ft Furnished Office Space</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem 0;"><i class="fa-solid fa-location-dot"></i> Tagor Road Commercial Complex, Gandhidham</p>
-          <ul class="service-list">
-            <li><i class="fa-solid fa-check"></i> Fully air-conditioned with 15 workstations</li>
-            <li><i class="fa-solid fa-check"></i> Private cabin, conference room & pantry</li>
-            <li><i class="fa-solid fa-check"></i> 100% power backup & elevator access</li>
-          </ul>
-          <button class="btn btn-primary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Inquire Monthly Rent</button>
-        </div>
-
-        <div class="service-card seller-card reveal">
-          <div class="tag" style="background: var(--accent-gold-dark); color: white; margin-bottom: 1rem;">Prime Retail Shop</div>
-          <h3>850 Sq.Ft Ground Floor Market Shop</h3>
-          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0.5rem 0 1rem 0;"><i class="fa-solid fa-location-dot"></i> Main Market Road, Sector 8, Gandhidham</p>
-          <ul class="service-list">
-            <li><i class="fa-solid fa-check"></i> Heavy customer footfall area</li>
-            <li><i class="fa-solid fa-check"></i> 20-foot glass frontage for brand visibility</li>
-            <li><i class="fa-solid fa-check"></i> Ideal for retail brands, banks & cafes</li>
-          </ul>
-          <button class="btn btn-secondary" onclick="openModal('buy')" style="width: 100%; margin-top: auto;">Schedule Property Visit</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Modal Dialog -->
   <div class="modal-overlay" id="leadModal">
     <div class="modal-container">
       <div class="modal-header">
         <button class="modal-close" id="closeModalBtn"><i class="fa-solid fa-xmark"></i></button>
-        <h2 id="modalTitle" style="color: white; font-size: 1.5rem;">Commercial Rental Inquiry - Gandhidham</h2>
-        <p id="modalSub" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 0.25rem;">Our commercial property manager will share rental rates & layouts.</p>
+        <h2 id="modalTitle" style="color: white; font-size: 1.5rem;">Commercial Property Inquiry</h2>
+        <p id="modalSub" style="color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-top: 0.25rem;">Submit your commercial property requirements in Gandhidham & Adipur.</p>
         
         <div class="modal-tabs">
-          <button class="modal-tab active" id="buyTab"><i class="fa-solid fa-cart-shopping"></i> I Want to Rent Commercial Space</button>
-          <button class="modal-tab" id="sellTab"><i class="fa-solid fa-tag"></i> I Want to Rent Out My Property</button>
+          <button class="modal-tab active" id="buyTab"><i class="fa-solid fa-cart-shopping"></i> I Want to Rent / Buy</button>
+          <button class="modal-tab" id="sellTab"><i class="fa-solid fa-tag"></i> I Want to Lease / Sell</button>
         </div>
       </div>
 
       <div class="modal-body">
         <form id="buyerForm" class="form-grid">
           <div class="form-group">
-            <label class="form-label">City / Location</label>
-            <input type="text" class="form-input" value="Gandhidham Commercial Hub" readonly>
+            <label class="form-label">Preferred Location</label>
+            <input type="text" class="form-input" placeholder="Gandhidham, Adipur or Sector" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Space Type Required</label>
+            <label class="form-group">Property Type</label>
             <select class="form-select" required>
               <option value="">Select Property Type</option>
               <option value="shop">Retail Shop / Showroom</option>
@@ -292,7 +246,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Your Name</label>
+            <label class="form-label">Your Full Name</label>
             <input type="text" class="form-input" placeholder="Full Name" required>
           </div>
           <div class="form-group">
@@ -300,22 +254,22 @@
             <input type="tel" class="form-input" placeholder="+91 XXXXX XXXXX" required>
           </div>
           <div class="form-group full-width">
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Rental Inquiry</button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Inquiry</button>
           </div>
         </form>
 
         <form id="sellerForm" class="form-grid" style="display: none;">
           <div class="form-group">
-            <label class="form-label">Gandhidham Property Address</label>
-            <input type="text" class="form-input" placeholder="e.g. Sector 9 Commercial Complex" required>
+            <label class="form-label">Property Location</label>
+            <input type="text" class="form-input" placeholder="Tagore Road, Sector 8, etc." required>
           </div>
           <div class="form-group">
             <label class="form-label">Built-up Area (Sq.Ft)</label>
-            <input type="text" class="form-input" placeholder="e.g. 1,000 Sq.Ft" required>
+            <input type="text" class="form-input" placeholder="e.g. 1,200 Sq.Ft" required>
           </div>
           <div class="form-group">
             <label class="form-label">Your Name</label>
-            <input type="text" class="form-input" placeholder="Owner / Representative Name" required>
+            <input type="text" class="form-input" placeholder="Full Name" required>
           </div>
           <div class="form-group">
             <label class="form-label">Phone Number</label>
@@ -328,8 +282,8 @@
 
         <div class="form-success" id="formSuccess">
           <div class="form-success-icon"><i class="fa-solid fa-circle-check"></i></div>
-          <h3>Inquiry Received!</h3>
-          <p>Our Gandhidham commercial manager will contact you within 24 hours.</p>
+          <h3>Inquiry Submitted!</h3>
+          <p>Our property team will contact you shortly.</p>
           <button class="btn btn-outline" onclick="closeModal()">Close</button>
         </div>
       </div>
@@ -339,9 +293,47 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-bottom" style="border: none; padding: 0;">
-        <p>© 2026 Shreeji Real Estate Consultant. Gandhidham Commercial Hub.</p>
-        <p><a href="/" style="color: var(--accent-gold);">Back to Main Home</a></p>
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="logo" style="margin-bottom: 1rem; display: inline-flex;">
+            <div class="logo-icon"><i class="fa-solid fa-building-user"></i></div>
+            <div class="logo-text" style="color: white;">Shreeji<span style="color: var(--accent-gold);">RealEstate</span></div>
+          </a>
+          <p data-i18n="footer_brand_desc">Shreeji Real Estate is your dedicated commercial property & rental consultancy headquartered in Gandhidham, Kutch, Gujarat.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer_target_areas">Target Areas</h4>
+          <ul class="footer-links">
+            <li><a href="/target-areas"><i class="fa-solid fa-filter" style="color: var(--accent-gold); margin-right: 0.4rem;"></i> AnyRoR Cascading Filter</a></li>
+            <li><a href="/gandhidham"><i class="fa-solid fa-building" style="color: var(--primary-light); margin-right: 0.4rem;"></i> Gandhidham Commercial Hub</a></li>
+            <li><a href="/adipur"><i class="fa-solid fa-store" style="color: var(--accent-emerald); margin-right: 0.4rem;"></i> Adipur Retail Belt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title" data-i18n="footer_quick_links">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/" data-i18n="nav_home">Home</a></li>
+            <li><a href="/overview" data-i18n="nav_overview">Overview</a></li>
+            <li><a href="/services" data-i18n="nav_services">Commercial Services</a></li>
+            <li><a href="/process" data-i18n="nav_process">Leasing Process</a></li>
+            <li><a href="/faq" data-i18n="nav_faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact & Helpdesk</h4>
+          <ul class="footer-links">
+            <li><i class="fa-solid fa-location-dot" style="color: var(--accent-gold);"></i> Gandhidham & Adipur, Kutch</li>
+            <li><i class="fa-solid fa-phone" style="color: var(--accent-gold);"></i> +91 XXXXX XXXXX</li>
+            <li><i class="fa-solid fa-envelope" style="color: var(--accent-gold);"></i> contact@shreejirealestate.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Shreeji Real Estate Consultant. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
